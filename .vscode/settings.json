@@ -7,9 +7,8 @@
 		"**/.DS_Store": true,
 		"**/Thumbs.db": true,
 		"**/build/**":false,
-		"**/*.d": true,
 		"**/Drivers/**": true,
-		"**/bootloader/**": false
+		"**/bootloader/**": true
 	},
 
 	"search.exclude": {
@@ -17,6 +16,5 @@
 		"**/bower_components": true,
 		"**/*.code-search": true,
 		"**/build/**": true,
-		"**/*.d": true,
 	}
 }
