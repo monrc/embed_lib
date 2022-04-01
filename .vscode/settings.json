@@ -8,7 +8,8 @@
 		"**/Thumbs.db": true,
 		"**/build/**":false,
 		"**/*.d": true,
-		"**/Drivers/**": false
+		"**/Drivers/**": true,
+		"**/bootloader/**: true"
 	},
 
 	"search.exclude": {
