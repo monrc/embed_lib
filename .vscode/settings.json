@@ -9,7 +9,7 @@
 		"**/build/**":false,
 		"**/*.d": true,
 		"**/Drivers/**": true,
-		"**/bootloader/**: true"
+		"**/bootloader/**": true
 	},
 
 	"search.exclude": {
