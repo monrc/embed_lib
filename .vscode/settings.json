@@ -6,9 +6,13 @@
 		"**/CVS": true,
 		"**/.DS_Store": true,
 		"**/Thumbs.db": true,
-		"**/build/**":false,
+		"**/.clang-format":true,
+		"**/astyle.bat":true,
+		
+		"**/build/**":true,
 		"**/Drivers/**": true,
-		"**/bootloader/**": true
+		"**/bootloader/**": true,
+		"**/MDK-ARM/**": true,
 	},
 
 	"search.exclude": {

@@ -75,7 +75,15 @@ void Error_Handler(void);
 #define BEEP_Pin GPIO_PIN_8
 #define BEEP_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-
+extern I2C_HandleTypeDef hi2c1;
+extern IWDG_HandleTypeDef hiwdg;
+extern RTC_HandleTypeDef hrtc;
+extern SD_HandleTypeDef hsd;
+extern SPI_HandleTypeDef hspi2;
+extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
+extern PCD_HandleTypeDef hpcd_USB_FS;
+extern void mcu_init(void);
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
