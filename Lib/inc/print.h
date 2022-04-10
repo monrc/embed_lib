@@ -5,17 +5,20 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define BIT(x) ((uint32_t)1 << x)
 
+//日志模块
+#define BIT(x)	  ((uint32_t)1 << x)
 #define LOG_PRINT BIT(0)
 #define LOG_PBSP  BIT(1)
 #define LOG_APP	  BIT(2)
 #define LOG_UART  BIT(3)
 
+//日志等级
 #define BSP_LEVEL	  1
 #define APP_LEVEL	  2
 #define PRINT_LEVEL 0xff
 
+//日志颜色
 #define NONE   "\e[0m"	  //清除颜色，即之后的打印为正常输出，之前的不受影响
 #define BLACK  "\e[0;30m" //深黑
 #define RED	   "\e[0;31m" //深红，暗红
@@ -43,61 +46,7 @@
 #define CLEAR	  "\e[2J"	 //清除
 #define CLRLINE	  "\r\e[K"	 //清除行
 
-
-#ifndef PLATFORM_DIAG
-#define PLATFORM_DIAG(x)                                                                                               \
-	do                                                                                                                 \
-	{                                                                                                                  \
-		printf x;                                                                                                      \
-	} while (0)
-#endif
-
-#ifndef PLATFORM_ASSERT
-#define PLATFORM_ASSERT(x)                                                                                             \
-	do                                                                                                                 \
-	{                                                                                                                  \
-		printf("Assertion \"%s\" failed at line %d in %s\r\n", x, __LINE__, __FILE__);                                 \
-		while (1)                                                                                                      \
-			;                                                                                                          \
-	} while (0)
-#endif
-
-#ifndef NOASSERT
-#define TASK_ASSERT(message, assertion)                                                                                \
-	do                                                                                                                 \
-	{                                                                                                                  \
-		if (!(assertion))                                                                                              \
-		{                                                                                                              \
-			PLATFORM_ASSERT(message);                                                                                  \
-		}                                                                                                              \
-	} while (0)
-#else /* NOASSERT */
-#define TASK_ASSERT(message, assertion)
-#endif /* NOASSERT */
-
-#ifndef PLATFORM_ERROR
-#define PLATFORM_ERROR(message)                                                                                        \
-	do                                                                                                                 \
-	{                                                                                                                  \
-		printf("Error \"%s\" failed at line %d in %s\r\n", message, __LINE__, __FILE__);                               \
-	} while (0)
-#elif defined DEBUG
-#define PLATFORM_ERROR(message) PLATFORM_DIAG((message))
-#else
-#define PLATFORM_ERROR(message)
-#endif
-
-/* if "expression" isn't true, then print "message" and execute "handler" expression */
-
-#ifndef DEBUG
-#ifndef PLATFORM_DIAG
-#error "If you want to use DEBUG, PLATFORM_DIAG(message) needs to be defined in your arch/cc.h"
-#endif
-
-#define error(format, arg...)                                                                                          \
-	print("Error \"%s\" failed at line %d in %s\r\n", message, __LINE__, __FILE__)                                     \
-		print(LOG_PRINT, PRINT_LEVEL, ##arg);
-
+//日志宏定义
 #define debug(format, arg...)				   print(LOG_PRINT, APP_LEVEL, format, ##arg);
 #define debug_r(module, level, format, arg...) print(module, level, RED format NONE, ##arg);
 #define debug_g(module, level, format, arg...) print(module, level, GREEN format NONE, ##arg);
@@ -111,6 +60,7 @@
 #define debug_warning(format, arg...) print_warning(__FILE__, __LINE__, format, ##arg)
 #define debug_prompt(format, arg...)  debug_g(LOG_PRINT, PRINT_LEVEL, format, ##arg)
 
+//日志模块功能
 void debug_init(void);
 
 void print(uint32_t module, uint8_t level, const char *format, ...);
@@ -125,8 +75,5 @@ void print_warning(const char *file, uint32_t line, const char *format, ...);
 
 void uart_send_irq(void);
 
-#else /* DEBUG */
-#define DEBUG(debug, message)
-#endif /* DEBUG */
 
 #endif

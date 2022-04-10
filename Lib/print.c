@@ -1,13 +1,12 @@
 
+
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
 #include "print.h"
 #include "circular_queue.h"
-#include "FreeRTOS.h"
-#include "semphr.h"
 
-#include "stm32f1xx_hal.h"
+#include "lib_port.h"
 
 // 配置项
 #define MSG_LEN			 200	//最大单次输出长度
@@ -16,11 +15,7 @@
 #define DEFAULT_LEVEL	 0x00	//默认打印等级
 #define CRITICAL_PROTECT 2		// 0 无临界保护、 1 任务级临界保护、 2 中断级临界保护
 
-// MCU UART 寄存器
-#define check_tx_busy()		 (READ_BIT(USART2->SR, UART_FLAG_TXE) != UART_FLAG_TXE)
-#define enable_tx_irq()		 SET_BIT(USART2->CR1, USART_CR1_TXEIE)
-#define disable_tx_irq()	 CLEAR_BIT(USART2->CR1, USART_CR1_TXEIE)
-#define uart_send_data(byte) USART2->DR = byte
+
 
 //临界段保护方式
 #if (CRITICAL_PROTECT == 2)
@@ -37,8 +32,6 @@
 #endif
 
 // 内部宏定义
-#define UART_STATE_START 0x01
-
 uint8_t sBuff[QUEUE_SIZE(1, BUFF_SIZE)];
 CircleQueue_t sUartQueue;
 uint32_t sModuleMask = DEFAULT_MODULE | LOG_PRINT;
@@ -56,6 +49,7 @@ uint8_t sUartIdle = true;
 void debug_init(void)
 {
 	creat_queue(&sUartQueue, 1, sBuff);
+	disable_uart_tx_irq();
 }
 
 /*
@@ -99,8 +93,8 @@ void print(uint32_t module, uint8_t level, const char *format, ...)
 	{
 		sUartIdle = false;
 		de_queue(&sUartQueue, &firstByte);
-		uart_send_data(firstByte);
-		enable_tx_irq();
+		write_uart_tx_reg(firstByte);
+		enable_uart_tx_irq();
 	}
 }
 
@@ -134,8 +128,8 @@ void uart_send_bytes(uint8_t *buff, uint8_t size)
 	{
 		sUartIdle = false;
 		de_queue(&sUartQueue, &firstByte);
-		uart_send_data(firstByte);
-		enable_tx_irq();
+		write_uart_tx_reg(firstByte);
+		enable_uart_tx_irq();
 	}
 }
 
@@ -192,7 +186,7 @@ void print_error(const char *file, uint32_t line, const char *format, ...)
 	va_list ap;			  //声明字符指针 ap
 	va_start(ap, format); //初始化 ap 变量
 
-	size = sprintf(txBuff, RED "Error \"%s\" failed at line %u ", file, line);
+	size = sprintf(txBuff, RED "Error \"%s\" line %u, ", file, line);
 	size += vsnprintf(&txBuff[size], MSG_LEN - size, format, ap); //使用参数列表发送格式化输出到字符串
 
 	va_end(ap);
@@ -220,7 +214,7 @@ void print_assert(const char *file, uint32_t line, const char *format, ...)
 	va_list ap; //声明字符指针 ap
 
 	va_start(ap, format); //初始化 ap 变量
-	size = sprintf(txBuff, RED "Assert \"%s\" failed at line %u ", file, line);
+	size = sprintf(txBuff, RED "Assert \"%s\" line %u, ", file, line);
 	size += vsnprintf(&txBuff[size], MSG_LEN - size, format, ap); //使用参数列表发送格式化输出到字符串
 	va_end(ap);
 
@@ -247,7 +241,7 @@ void print_warning(const char *file, uint32_t line, const char *format, ...)
 	va_list ap; //声明字符指针 ap
 
 	va_start(ap, format); //初始化 ap 变量
-	size = sprintf(txBuff, YELLOW "Warning \"%s\" failed at line %lu ", file, line);
+	size = sprintf(txBuff, YELLOW "Warning \"%s\" line %u, ", file, line);
 	size += vsnprintf(&txBuff[size], MSG_LEN - size, format, ap); //使用参数列表发送格式化输出到字符串
 	va_end(ap);
 
@@ -298,11 +292,11 @@ void uart_send_irq(void)
 	uint8_t byte;
 	if (de_queue(&sUartQueue, &byte))
 	{
-		uart_send_data(byte);
+		write_uart_tx_reg(byte);
 	}
 	else
 	{
-		disable_tx_irq();
+		disable_uart_tx_irq();
 		sUartIdle = true;
 	}
 }
@@ -317,9 +311,9 @@ void uart_send_irq(void)
  */
 void uart2_output(uint8_t data)
 {
-	uart_send_data(data);
+	write_uart_tx_reg(data);
 
-	while (check_tx_busy()) //循环发送,直到发送完毕
+	while (get_uart_tx_busy()) //循环发送,直到发送完毕
 	{
 	}
 }

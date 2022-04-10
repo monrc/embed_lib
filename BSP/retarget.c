@@ -1,5 +1,5 @@
 
-#if 0
+#if 1
 void retarget_init()
 {
   // Initialize UART
@@ -26,10 +26,5 @@ void _ttywrch(int ch) {
    * Need implementing with UART here. */
 }
 
-/* SystemInit will be called before main */
-void SystemInit()
-{
-    retarget_init();
-}
 
 #endif

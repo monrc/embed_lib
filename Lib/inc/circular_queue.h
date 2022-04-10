@@ -32,7 +32,7 @@ typedef struct
 #define en_queue_bytes(queue, pData, size) queue_input_bytes(queue, pData, size, __FILE__, __LINE__);
 
 void init_queue(CircleQueue_t *queue, uint8_t itemSize, void *buff, uint16_t buffSize, char *pName);
-bool queue_input(CircleQueue_t *queue, void *pData, char *pFile, int line);
+bool queue_input(CircleQueue_t *queue, const void *pData, char *pFile, int line);
 bool queue_input_bytes(CircleQueue_t *queue, void *pData, uint16_t size, char *pFile, int line);
 bool queue_input_msg(CircleQueue_t *queue, void *pData, uint16_t size, char *pFile, int line);
 #else

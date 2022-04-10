@@ -28,7 +28,6 @@
 #include <stdio.h>
 #include "terminal.h"
 
-#define 	PUTCHAR_WITH_IT
 
 //内部函数声明
 static void searching_command(void);
@@ -64,7 +63,7 @@ const Function_map_t stFunTab[] =
 #define STFUNTAB_SIZE		(sizeof(stFunTab) / sizeof(stFunTab[0]))
 
 //内部终端模块结构体定义
-static Terminal_t stTerminal;
+static Terminal_t sTerminal;
 
 
 /*
@@ -82,17 +81,17 @@ void terminal_handler(void)
 	const char backSpace[3] = {'\b', ' ', '\b'};
 
 	//起着同步与互斥的作用
-	if (TERMINAL_READY != stTerminal.flag.state)
+	if (TERMINAL_READY != sTerminal.flag.state)
 	{
 		input_echo();	//输入回显
 		return;
 	}
 
-	switch (stTerminal.ctrlType)
+	switch (sTerminal.ctrlType)
 	{
 		case '\b':	//backspace 按键
 		{
-			stTerminal.recvLen = stTerminal.recvLen ? stTerminal.recvLen - 1 : 0;
+			sTerminal.recvLen = sTerminal.recvLen ? sTerminal.recvLen - 1 : 0;
 			output_string(backSpace, 3);
 			break;
 		}
@@ -112,25 +111,25 @@ void terminal_handler(void)
 
 		case INPUT_KEY_UP:	//↑按键
 		{
-			if (stTerminal.recvLen == 0)
+			if (sTerminal.recvLen == 0)
 			{
-				if (' ' == stTerminal.recvBuff[stTerminal.recvLast - 1])
+				if (' ' == sTerminal.recvBuff[sTerminal.recvLast - 1])
 				{
-					stTerminal.recvLast--;
+					sTerminal.recvLast--;
 				}
 
-				stTerminal.recvLen = stTerminal.recvLast;
-				output_string(stTerminal.recvBuff, stTerminal.recvLen);
+				sTerminal.recvLen = sTerminal.recvLast;
+				output_string(sTerminal.recvBuff, sTerminal.recvLen);
 			}
 			break;
 		}
 
 		case INPUT_KEY_DOWN: //↓按键
 		{
-			if (stTerminal.recvLen == 0)
+			if (sTerminal.recvLen == 0)
 			{
-				stTerminal.recvLen = stTerminal.recvLast;
-				output_string(stTerminal.recvBuff, stTerminal.recvLen);
+				sTerminal.recvLen = sTerminal.recvLast;
+				output_string(sTerminal.recvBuff, sTerminal.recvLen);
 
 				printf("\r\n");
 				recv_semantic_analysis();
@@ -141,14 +140,14 @@ void terminal_handler(void)
 		case RECV_BUFF_OVERFLOW:	//缓冲区溢出
 		{
 			printf("uart recv over flow\r\n");
-			stTerminal.recvLast = stTerminal.recvLen;
-			stTerminal.recvLen = 0;
+			sTerminal.recvLast = sTerminal.recvLen;
+			sTerminal.recvLen = 0;
 			break;
 		}
 		default :
 			break;
 	}
-	stTerminal.flag.state = TERMINAL_IDEL;
+	sTerminal.flag.state = TERMINAL_IDEL;
 }
 
 /*
@@ -164,10 +163,10 @@ void terminal_handler(void)
 void terminal_init(void (*pCallBack)(uint8_t))
 {
 	uint8_t i;
-	memset(&stTerminal, 0, sizeof(Terminal_t));
-	stTerminal.OutPutCallBack = pCallBack; //串口打印函数
-	stTerminal.flag.state = TERMINAL_IDEL;
-	stTerminal.authority = DEFAULT_AUTHORITY;
+	memset(&sTerminal, 0, sizeof(Terminal_t));
+	sTerminal.OutPutCallBack = pCallBack; //串口打印函数
+	sTerminal.flag.state = TERMINAL_IDEL;
+	sTerminal.authority = DEFAULT_AUTHORITY;
 
 	//函数列表检测
 	for (i = 0; i < STFUNTAB_SIZE; i++)
@@ -190,13 +189,13 @@ void terminal_init(void (*pCallBack)(uint8_t))
 		//更新用户登陆索引表
 		if (0 == strcmp(stFunTab[i].pName, USER_NAME_TESTER))
 		{
-			stTerminal.userIndexTab[0] = i;
+			sTerminal.userIndexTab[0] = i;
 		}
 		else if (0 == strcmp(stFunTab[i].pName, USER_NAME_ADMIN))
 		{
-			stTerminal.userIndexTab[1] = i;
+			sTerminal.userIndexTab[1] = i;
 		}
-		stTerminal.authority = stTerminal.userIndexTab[1];
+		sTerminal.authority = sTerminal.userIndexTab[1];
 	}
 }
 
@@ -212,9 +211,9 @@ void terminal_init(void (*pCallBack)(uint8_t))
 */
 static void input_echo(void)
 {
-	if (stTerminal.showLen < stTerminal.recvLen)
+	if (sTerminal.showLen < sTerminal.recvLen)
 	{
-		stTerminal.OutPutCallBack(stTerminal.recvBuff[stTerminal.showLen++]);
+		sTerminal.OutPutCallBack(sTerminal.recvBuff[sTerminal.showLen++]);
 	}
 }
 
@@ -235,9 +234,9 @@ static void output_string(const char *pStr, uint8_t len)
 
 	while (len--)
 	{
-		stTerminal.OutPutCallBack(*pStr++);
+		sTerminal.OutPutCallBack(*pStr++);
 	}
-	stTerminal.showLen = stTerminal.recvLen;
+	sTerminal.showLen = sTerminal.recvLen;
 }
 
 /*
@@ -254,7 +253,7 @@ static bool check_login_cmd(uint8_t index)
 	uint8_t i = 0;
 	for (i = 0; i < USER_NUMBER; i++)
 	{
-		if (stTerminal.userIndexTab[i] == index)
+		if (sTerminal.userIndexTab[i] == index)
 		{
 			return true;
 		}
@@ -275,7 +274,7 @@ static bool check_login_cmd(uint8_t index)
 void terminal_input_predeal(uint8_t input)
 {
 	//ready状态，直接退出，等待分析函数分析命令
-	if (stTerminal.flag.state == TERMINAL_READY)
+	if (sTerminal.flag.state == TERMINAL_READY)
 	{
 		return;
 	}
@@ -286,11 +285,11 @@ void terminal_input_predeal(uint8_t input)
 	}
 
 	//特殊控制字符（上下左右）处理
-	if (stTerminal.specialCharFlag)
+	if (sTerminal.specialCharFlag)
 	{
-		stTerminal.specialCharFlag++;
+		sTerminal.specialCharFlag++;
 
-		switch (stTerminal.specialCharFlag)
+		switch (sTerminal.specialCharFlag)
 		{
 			case 2:
 			{
@@ -304,7 +303,7 @@ void terminal_input_predeal(uint8_t input)
 					//此处应该产生esc按键的处理信号，由于esc按键应用层暂未做功能实现，故滤掉
 
 					//恢复特殊字符处理标志字
-					stTerminal.specialCharFlag = 0;
+					sTerminal.specialCharFlag = 0;
 					break;
 				}
 			}
@@ -312,15 +311,15 @@ void terminal_input_predeal(uint8_t input)
 			{
 				if (65 <= input && input <= 68)
 				{
-					stTerminal.ctrlType = CHAR_TO_SPECIAL(input);
-					stTerminal.flag.state = TERMINAL_READY;
+					sTerminal.ctrlType = CHAR_TO_SPECIAL(input);
+					sTerminal.flag.state = TERMINAL_READY;
 				}
-				stTerminal.specialCharFlag = 0;
+				sTerminal.specialCharFlag = 0;
 				return;
 			}
 			default:
 			{
-				stTerminal.specialCharFlag = 0;
+				sTerminal.specialCharFlag = 0;
 				return;
 			}
 		}
@@ -331,29 +330,29 @@ void terminal_input_predeal(uint8_t input)
 	{
 		if (27 == input)
 		{
-			stTerminal.specialCharFlag = 1;
+			sTerminal.specialCharFlag = 1;
 		}
 		else	//非特殊控制字符
 		{
-			stTerminal.flag.state = TERMINAL_READY;
-			stTerminal.ctrlType = input;
+			sTerminal.flag.state = TERMINAL_READY;
+			sTerminal.ctrlType = input;
 		}
 	}
 	else	//处理ASCII码打印字符
 	{
 		//输入回显至窗口
-		//stTerminal.OutPutCallBack(Data);
+		//sTerminal.OutPutCallBack(Data);
 
 		//接收缓冲区满，强制切换至接收完成状态
-		if (RECV_BUFF_MAX_SIZE == stTerminal.recvLen)
+		if (RECV_BUFF_MAX_SIZE == sTerminal.recvLen)
 		{
-			stTerminal.flag.state = TERMINAL_READY;
-			stTerminal.ctrlType = RECV_BUFF_OVERFLOW;
+			sTerminal.flag.state = TERMINAL_READY;
+			sTerminal.ctrlType = RECV_BUFF_OVERFLOW;
 		}
 		else
 		{
-			stTerminal.recvBuff[stTerminal.recvLen++] = input;
-			stTerminal.flag.state = TERMINAL_BUSY;
+			sTerminal.recvBuff[sTerminal.recvLen++] = input;
+			sTerminal.flag.state = TERMINAL_BUSY;
 		}
 	}
 }
@@ -374,15 +373,15 @@ static void searching_command(void)
 	uint8_t nameLength;
 	uint8_t matchIndex[STFUNTAB_SIZE] = {0};
 	uint8_t MatchNum = 0;
-	uint8_t newLen = stTerminal.recvLen;
+	uint8_t newLen = sTerminal.recvLen;
 	bool bMatchFlag = true;
 	char Char;
 
 	//接收缓冲区为空，返回打印所有命令
-	if (0 == stTerminal.recvLen)
+	if (0 == sTerminal.recvLen)
 	{
 		printf("\r\n");
-		for (i = 0; i < stTerminal.authority; i++)
+		for (i = 0; i < sTerminal.authority; i++)
 		{
 			if (false == check_login_cmd(i))
 			{
@@ -394,9 +393,9 @@ static void searching_command(void)
 	}
 
 	//遍历查找匹配的命令，记录索引号
-	for (i = 0; i < stTerminal.authority; i++)
+	for (i = 0; i < sTerminal.authority; i++)
 	{
-		if (0 == strncmp(stFunTab[i].pName, stTerminal.recvBuff, stTerminal.recvLen))
+		if (0 == strncmp(stFunTab[i].pName, sTerminal.recvBuff, sTerminal.recvLen))
 		{
 			if (false == check_login_cmd(i))
 			{
@@ -430,19 +429,19 @@ static void searching_command(void)
 		}
 
 		newLen--;
-		strncpy(&stTerminal.recvBuff[stTerminal.recvLen], &stFunTab[matchIndex[0]].pName[stTerminal.recvLen], newLen - stTerminal.recvLen);
-		stTerminal.recvLen = newLen;
-		output_string(stTerminal.recvBuff, stTerminal.recvLen);
+		strncpy(&sTerminal.recvBuff[sTerminal.recvLen], &stFunTab[matchIndex[0]].pName[sTerminal.recvLen], newLen - sTerminal.recvLen);
+		sTerminal.recvLen = newLen;
+		output_string(sTerminal.recvBuff, sTerminal.recvLen);
 	}
 	else if (1 == MatchNum)	//匹配的命令仅有一个
 	{
 		nameLength = strlen(stFunTab[matchIndex[0]].pName);
-		newLen = nameLength - stTerminal.recvLen;		//新增加的字符串长度
-		strncpy(&stTerminal.recvBuff[stTerminal.recvLen], &stFunTab[matchIndex[0]].pName[stTerminal.recvLen], newLen);
-		stTerminal.recvBuff[nameLength++] = ' '; 		//添加空格符
+		newLen = nameLength - sTerminal.recvLen;		//新增加的字符串长度
+		strncpy(&sTerminal.recvBuff[sTerminal.recvLen], &stFunTab[matchIndex[0]].pName[sTerminal.recvLen], newLen);
+		sTerminal.recvBuff[nameLength++] = ' '; 		//添加空格符
 
-		stTerminal.recvLen = nameLength;
-		output_string(&stTerminal.recvBuff[stTerminal.showLen], newLen + 1);
+		sTerminal.recvLen = nameLength;
+		output_string(&sTerminal.recvBuff[sTerminal.showLen], newLen + 1);
 	}
 }
 
@@ -465,7 +464,7 @@ static bool recv_semantic_analysis(void)
 	uint32_t pramter[FUN_ARGUMENTS_MAX_SIZE] = {0};	 //参数缓冲区
 	uint8_t paramterNum = 0;			//参数个数
 	uint8_t cmdIndex = STFUNTAB_SIZE;	//匹配命令位置
-	if (0 == stTerminal.recvLen)	//数据段为空
+	if (0 == sTerminal.recvLen)	//数据段为空
 	{
 		bState = false;
 		goto SEMANTIC_ERROR;
@@ -483,7 +482,7 @@ static bool recv_semantic_analysis(void)
 	//查找命令
 	for (i = 0; i < STFUNTAB_SIZE; i++)
 	{
-		if (0 == strncmp(stFunTab[i].pName, &stTerminal.recvBuff[head], cmdLen))
+		if (0 == strncmp(stFunTab[i].pName, &sTerminal.recvBuff[head], cmdLen))
 		{
 			cmdIndex = i; //记录命令的位置
 			break;
@@ -497,7 +496,7 @@ static bool recv_semantic_analysis(void)
 	}
 
 	//处理输入的参数
-	for (i = tail; i < stTerminal.recvLen; i += temp)
+	for (i = tail; i < sTerminal.recvLen; i += temp)
 	{
 		head = tail + 1;
 		temp = separate_string(&head, ' ', &tail);
@@ -506,7 +505,7 @@ static bool recv_semantic_analysis(void)
 			break;
 		}
 
-		if (false == string_to_uint(&stTerminal.recvBuff[head], temp, &pramter[paramterNum++]))
+		if (false == string_to_uint(&sTerminal.recvBuff[head], temp, &pramter[paramterNum++]))
 		{
 			printf("paramater error\r\n");
 			bState = false;
@@ -524,12 +523,12 @@ static bool recv_semantic_analysis(void)
 	execute_handled(cmdIndex, pramter, paramterNum);
 
 SEMANTIC_ERROR:
-	if (stTerminal.recvLen)	//缓存最新的数据长度，复位接收及回显缓冲区
+	if (sTerminal.recvLen)	//缓存最新的数据长度，复位接收及回显缓冲区
 	{
-		stTerminal.recvLast = stTerminal.recvLen;
+		sTerminal.recvLast = sTerminal.recvLen;
 	}
-	stTerminal.recvLen = 0;
-	stTerminal.showLen = 0;
+	sTerminal.recvLen = 0;
+	sTerminal.showLen = 0;
 
 	return bState;
 }
@@ -550,9 +549,9 @@ static uint8_t separate_string(uint8_t *pStart, const char chr, uint8_t *pEnd)
 {
 	//ERROR("pointer is null", (pStart != NULL && pEnd != NULL), return false;);
 	//过滤多余的分隔符
-	while (*pStart < stTerminal.recvLen)
+	while (*pStart < sTerminal.recvLen)
 	{
-		if (stTerminal.recvBuff[*pStart] != chr)
+		if (sTerminal.recvBuff[*pStart] != chr)
 		{
 			break;
 		}
@@ -561,9 +560,9 @@ static uint8_t separate_string(uint8_t *pStart, const char chr, uint8_t *pEnd)
 
 	//查找字符串
 	*pEnd = *pStart;
-	while (*pEnd < stTerminal.recvLen)
+	while (*pEnd < sTerminal.recvLen)
 	{
-		if (stTerminal.recvBuff[*pEnd] == chr)
+		if (sTerminal.recvBuff[*pEnd] == chr)
 		{
 			break;
 		}
@@ -665,7 +664,7 @@ static bool string_to_uint(char *pStr, uint8_t len, uint32_t *pValue)
 */
 static void execute_handled(uint8_t funIndex, uint32_t *pArg, uint8_t argNum)
 {
-	if (stTerminal.authority <= funIndex)
+	if (sTerminal.authority <= funIndex)
 	{
 		if (false == check_login_cmd(funIndex))
 		{
@@ -723,7 +722,7 @@ static void tester_login(uint32_t key)
 {
 	if (USER_KEY_TESETER == key)
 	{
-		stTerminal.authority = stTerminal.userIndexTab[0];
+		sTerminal.authority = sTerminal.userIndexTab[0];
 		printf("UnLock success\r\n");
 	}
 	else
@@ -746,7 +745,7 @@ static void admin_login(uint32_t key)
 {
 	if (USER_KEY_ADMIN == key)
 	{
-		stTerminal.authority = stTerminal.userIndexTab[1];
+		sTerminal.authority = sTerminal.userIndexTab[1];
 		printf("UnLock success\r\n");
 	}
 	else

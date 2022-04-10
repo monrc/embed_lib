@@ -1,6 +1,7 @@
 
-#include <string.h>
+
 #include <stdio.h>
+#include <string.h>
 #include "circular_queue.h"
 
 #define CRITICAL_PROTECT 2 // 0 无临界保护、 1 任务级临界保护、 2 中断级临界保护
@@ -100,7 +101,7 @@ uint16_t get_remain_num(CircleQueue_t *queue)
  */
 
 #if (1 == QUEUE_DEBUG)
-bool queue_input(CircleQueue_t *queue, void *pData, char *pFile, int line)
+bool queue_input(CircleQueue_t *queue, const void *pData, char *pFile, int line)
 #else
 bool queue_input(CircleQueue_t *queue, void *pData)
 #endif
@@ -359,5 +360,46 @@ bool de_queue_msg(CircleQueue_t *queue, void *pData, uint16_t *pSize)
 	return ret;
 }
 
+/*
+ * ============================================================================
+ * Function	: 队列模块测试功能是否正常
+ * ============================================================================
+ */
+void queue_test(void)
+{
+#define MSG_SIZE 7
+	
+	uint8_t testBuff[QUEUE_SIZE(1, 41)];
+	CircleQueue_t queue;
 
+	uint8_t i;
+	uint8_t read;
+	uint8_t data[MSG_SIZE];
+	uint32_t times = 100;
 
+	creat_queue(&queue, 1, testBuff);
+
+	for (i = 0; i < MSG_SIZE; i++)
+	{
+		data[i] = i;
+	}
+
+	while (times--)
+	{
+		en_queue_bytes(&queue, data, MSG_SIZE);
+		for (i = 0; i < MSG_SIZE; i++)
+		{
+			if (de_queue(&queue, &read))
+			{
+				if (read != i)
+				{
+					printf("error %u, %u", read, i);
+				}
+			}
+			else
+			{
+				printf("lost %u\r\n", i);
+			}
+		}
+	}
+}
