@@ -20,6 +20,7 @@
 //临界段保护方式
 #if (CRITICAL_PROTECT == 2)
 #include "FreeRTOS.h"
+#include "task.h"
 #define enter_critical() uint32_t interrupt = portSET_INTERRUPT_MASK_FROM_ISR();
 #define exit_critical()	 portCLEAR_INTERRUPT_MASK_FROM_ISR(interrupt)
 #elif (CRITICAL_PROTECT == 1)
@@ -30,6 +31,8 @@
 #define enter_critical()
 #define exit_critical()
 #endif
+
+void uart2_output(uint8_t data);
 
 // 内部宏定义
 uint8_t sBuff[QUEUE_SIZE(1, BUFF_SIZE)];
@@ -73,6 +76,10 @@ void print(uint32_t module, uint8_t level, const char *format, ...)
 	if ((module & sModuleMask) && level > sPrintLevel)
 	{
 		length = vsnprintf(buff, MSG_LEN, format, ap); //使用参数列表发送格式化输出到字符串
+	}
+	else
+	{
+		return;
 	}
 
 	while (1)
@@ -147,12 +154,13 @@ void uart_send_bytes(uint8_t *buff, uint8_t size)
 void print_array(uint32_t module, const char *name, uint8_t *array, uint8_t size)
 {
 	uint8_t i;
-	char txBuff[MSG_LEN] = {'\0'};
+	char txBuff[MSG_LEN];
 	char *ptr;
 	uint8_t len;
 
 	if (module & sModuleMask)
 	{
+		txBuff[0] = '\0';
 		strcpy(txBuff, name);
 		len = strlen(txBuff);
 
@@ -179,14 +187,14 @@ void print_array(uint32_t module, const char *name, uint8_t *array, uint8_t size
  * Return	: None
  * ============================================================================
  */
-void print_error(const char *file, uint32_t line, const char *format, ...)
+void print_error(const char *file, int line, const char *format, ...)
 {
 	uint8_t size = 0;
 	char txBuff[MSG_LEN];
 	va_list ap;			  //声明字符指针 ap
 	va_start(ap, format); //初始化 ap 变量
 
-	size = sprintf(txBuff, RED "Error \"%s\" line %u, ", file, line);
+	size = sprintf(txBuff, RED "Error \"%s\" line %d, ", file, line);
 	size += vsnprintf(&txBuff[size], MSG_LEN - size, format, ap); //使用参数列表发送格式化输出到字符串
 
 	va_end(ap);
@@ -201,20 +209,20 @@ void print_error(const char *file, uint32_t line, const char *format, ...)
  * ============================================================================
  * Function	: 打印断言
  * Input	: const char *file 文件名
-			  uint32_t line 行数
+			  int line 行数
 			  const char *format 打印参数列表
  * Output	: None
  * Return	: None
  * ============================================================================
  */
-void print_assert(const char *file, uint32_t line, const char *format, ...)
+void print_assert(const char *file, int line, const char *format, ...)
 {
 	uint8_t size;
 	char txBuff[MSG_LEN];
 	va_list ap; //声明字符指针 ap
 
 	va_start(ap, format); //初始化 ap 变量
-	size = sprintf(txBuff, RED "Assert \"%s\" line %u, ", file, line);
+	size = sprintf(txBuff, RED "Assert \"%s\" line %d, ", file, line);
 	size += vsnprintf(&txBuff[size], MSG_LEN - size, format, ap); //使用参数列表发送格式化输出到字符串
 	va_end(ap);
 
@@ -234,14 +242,14 @@ void print_assert(const char *file, uint32_t line, const char *format, ...)
  * Return	: None
  * ============================================================================
  */
-void print_warning(const char *file, uint32_t line, const char *format, ...)
+void print_warning(const char *file, int line, const char *format, ...)
 {
 	uint8_t size;
 	char txBuff[MSG_LEN];
 	va_list ap; //声明字符指针 ap
 
 	va_start(ap, format); //初始化 ap 变量
-	size = sprintf(txBuff, YELLOW "Warning \"%s\" line %u, ", file, line);
+	size = sprintf(txBuff, YELLOW "Warning \"%s\" line %d, ", file, line);
 	size += vsnprintf(&txBuff[size], MSG_LEN - size, format, ap); //使用参数列表发送格式化输出到字符串
 	va_end(ap);
 
@@ -316,4 +324,31 @@ void uart2_output(uint8_t data)
 	while (get_uart_tx_busy()) //循环发送,直到发送完毕
 	{
 	}
+}
+
+/*
+ * ============================================================================
+ * Function	: 打印警告
+ * Input	: const char *file 文件名
+			  uint32_t line 行数
+			  const char *format 打印参数列表
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void print_wait(const char *format, ...)
+{
+	uint8_t size;
+	uint8_t i;
+	char txBuff[MSG_LEN];
+	va_list ap; //声明字符指针 ap
+
+	va_start(ap, format); //初始化 ap 变量
+	size = vsnprintf(txBuff, MSG_LEN, format, ap); //使用参数列表发送格式化输出到字符串
+	va_end(ap);
+
+	for (i = 0; i < size; i++)
+	{
+		uart2_output(txBuff[i]);
+	}	
 }

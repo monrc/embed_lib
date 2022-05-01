@@ -71,6 +71,7 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include "print.h"
 #include "stm32f103xe.h"
 
 //#include "bsp_usart.h"
@@ -82,7 +83,7 @@ extern uint32_t SystemCoreClock;
 #endif
 
 //╤оят
-#define vAssertCalled(char, int) printf("Error:%s,%d\r\n", char, int)
+#define vAssertCalled(char, int) print_wait("Error:%s,%d\r\n", char, int)
 #define configASSERT(x)                                                                                                \
 	if ((x) == 0)                                                                                                      \
 	vAssertCalled(__FILE__, __LINE__)

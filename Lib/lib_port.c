@@ -61,3 +61,68 @@ bool get_uart_tx_busy(void)
 		return true;
 	}
 }
+
+/*
+ * ============================================================================
+ * Function	: 获取按键是否按下了
+ * Input	: uint8_t id 按键序号
+ * Output	: None
+ * Return	: 0 未按下	1 按下了
+ * ============================================================================
+ */
+uint8_t get_key_pressed(uint8_t id)
+{
+	uint8_t result = 0;
+
+	switch (id)
+	{
+		case 0:
+			result = HAL_GPIO_ReadPin(KEY0_GPIO_Port, KEY0_Pin) == GPIO_PIN_RESET ? 1 : 0;
+			break;
+		case 1:
+			result = HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == GPIO_PIN_RESET ? 1 : 0;
+			break;
+		case 2:
+			result = HAL_GPIO_ReadPin(KEY2_GPIO_Port, KEY2_Pin) == GPIO_PIN_RESET ? 1 : 0;
+			break;
+		case 3:
+			result = HAL_GPIO_ReadPin(KEY_UP_GPIO_Port, KEY_UP_Pin);
+		default:
+			break;
+	}
+
+	return result;
+}
+
+/*
+ * ============================================================================
+ * Function	: 获取LED的状态
+ * Input	: uint8_t id LED灯序号
+			  uint8_t state 状态
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void set_led_state(uint8_t id, uint8_t state)
+{
+	GPIO_PinState pinState;
+
+	pinState = state ? GPIO_PIN_SET : GPIO_PIN_RESET;
+	switch (id)
+	{
+		case 0:
+			HAL_GPIO_WritePin(LED0_DS0_GPIO_Port, LED0_DS0_Pin, pinState);
+			break;
+		case 1:
+			HAL_GPIO_WritePin(LED1_DS1_GPIO_Port, LED1_DS1_Pin, pinState);
+			break;
+		default:
+			break;
+	}
+}
+
+
+void input_key_deal(uint8_t id, uint8_t keyType)
+{
+	
+}

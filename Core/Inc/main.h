@@ -1,22 +1,22 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.h
+ * @brief          : Header for main.c file.
+ *                   This file contains the common defines of the application.
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
+ * All rights reserved.</center></h2>
+ *
+ * This software component is licensed by ST under BSD 3-Clause license,
+ * the "License"; You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at:
+ *                        opensource.org/licenses/BSD-3-Clause
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
@@ -24,7 +24,8 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -58,22 +59,26 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define KEY2_Pin GPIO_PIN_2
-#define KEY2_GPIO_Port GPIOE
-#define KEY1_Pin GPIO_PIN_3
-#define KEY1_GPIO_Port GPIOE
-#define KEY0_Pin GPIO_PIN_4
-#define KEY0_GPIO_Port GPIOE
-#define LED1_DS1_Pin GPIO_PIN_5
+#define KEY2_Pin		   GPIO_PIN_2
+#define KEY2_GPIO_Port	   GPIOE
+#define KEY1_Pin		   GPIO_PIN_3
+#define KEY1_GPIO_Port	   GPIOE
+#define KEY0_Pin		   GPIO_PIN_4
+#define KEY0_GPIO_Port	   GPIOE
+#define KEY_UP_Pin		   GPIO_PIN_0
+#define KEY_UP_GPIO_Port   GPIOA
+	
+#define LED1_DS1_Pin	   GPIO_PIN_5
 #define LED1_DS1_GPIO_Port GPIOE
-#define KEY_UP_Pin GPIO_PIN_0
-#define KEY_UP_GPIO_Port GPIOA
-#define FLASH_CS_Pin GPIO_PIN_12
-#define FLASH_CS_GPIO_Port GPIOB
-#define LED0_DS0_Pin GPIO_PIN_5
+#define LED0_DS0_Pin	   GPIO_PIN_5
 #define LED0_DS0_GPIO_Port GPIOB
-#define BEEP_Pin GPIO_PIN_8
-#define BEEP_GPIO_Port GPIOB
+	
+#define FLASH_CS_Pin	   GPIO_PIN_12
+#define FLASH_CS_GPIO_Port GPIOB
+
+#define BEEP_Pin		   GPIO_PIN_8
+#define BEEP_GPIO_Port	   GPIOB
+
 /* USER CODE BEGIN Private defines */
 extern I2C_HandleTypeDef hi2c1;
 extern IWDG_HandleTypeDef hiwdg;

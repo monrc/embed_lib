@@ -6,7 +6,7 @@ AlignAfterOpenBracket: Align
 AlignConsecutiveMacros: true
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
-AlignEscapedNewlines: Right
+AlignEscapedNewlines: Left
 AlignOperands:   true
 AlignTrailingComments: true
 AllowAllArgumentsOnNextLine: true
@@ -27,13 +27,13 @@ BinPackParameters: true
 BraceWrapping:
   AfterCaseLabel:  false
   AfterClass:      true
-  AfterControlStatement: true
+  AfterControlStatement: Always
   AfterEnum:       true
   AfterFunction:   true
   AfterNamespace:  true
   AfterObjCDeclaration: true
   AfterStruct:     true
-  AfterUnion:      false
+  AfterUnion:      true
   AfterExternBlock: true
   BeforeCatch:     true
   BeforeElse:      true

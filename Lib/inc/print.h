@@ -64,14 +64,15 @@
 void debug_init(void);
 
 void print(uint32_t module, uint8_t level, const char *format, ...);
+void print_wait(const char *format, ...);
 
 void uart_send_bytes(uint8_t *buff, uint8_t size);
 
 void print_array(uint32_t module, const char *name, uint8_t *buff, uint8_t size);
 
-void print_error(const char *file, uint32_t line, const char *format, ...);
-void print_assert(const char *file, uint32_t line, const char *format, ...);
-void print_warning(const char *file, uint32_t line, const char *format, ...);
+void print_error(const char *file, int line, const char *format, ...);
+void print_assert(const char *file, int line, const char *format, ...);
+void print_warning(const char *file, int line, const char *format, ...);
 
 void uart_send_irq(void);
 

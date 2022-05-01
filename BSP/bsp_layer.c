@@ -11,6 +11,9 @@ void nvic_init(void)
 
 	HAL_NVIC_SetPriority(USART2_IRQn, 2, 0);
 	HAL_NVIC_EnableIRQ(USART2_IRQn);
+
+	HAL_NVIC_SetPriority(EXTI0_IRQn, 15, 0);
+	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 }
 
 void iwdg_refresh(void)

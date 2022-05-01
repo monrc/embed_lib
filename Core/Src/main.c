@@ -466,7 +466,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : KEY2_Pin KEY1_Pin KEY0_Pin */
   GPIO_InitStruct.Pin = KEY2_Pin|KEY1_Pin|KEY0_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
@@ -479,7 +479,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : KEY_UP_Pin */
   GPIO_InitStruct.Pin = KEY_UP_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(KEY_UP_GPIO_Port, &GPIO_InitStruct);
 
