@@ -3,6 +3,7 @@
 #include "semphr.h"
 #include "print.h"
 #include "app_layer.h"
+#include "lib_port.h"
 
 void USART2_IRQHandler(void) //串口2中断服务程序
 {
@@ -28,34 +29,29 @@ void USART2_IRQHandler(void) //串口2中断服务程序
 
 void EXTI0_IRQHandler(void)
 {
-	BaseType_t xHigherPriorityTaskWoken;
-
 	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
 
-	if (KeyTaskHandle != NULL)
-	{
-		xTaskNotifyFromISR(KeyTaskHandle, 0, eSetValueWithOverwrite, &xHigherPriorityTaskWoken);
-		portYIELD_FROM_ISR(xHigherPriorityTaskWoken); //如果需要的话进行一次任务切换
-	}
+	key_irq_handle(keyTask[3], 3);
 }
 
 
 void EXTI2_IRQHandler(void)
 {
 	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
-
+	key_irq_handle(keyTask[2], 2);
 }
 
 
 void EXTI3_IRQHandler(void)
 {
 	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
-
+	key_irq_handle(keyTask[1], 1);
 }
 
 void EXTI4_IRQHandler(void)
 {
 	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
+	key_irq_handle(keyTask[0], 0);
 }
 
 

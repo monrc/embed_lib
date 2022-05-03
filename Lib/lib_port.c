@@ -1,6 +1,8 @@
 
 #include "lib_port.h"
 #include "main.h"
+#include "print.h"
+#include "key.h"
 
 
 /*
@@ -92,6 +94,59 @@ uint8_t get_key_pressed(uint8_t id)
 	}
 
 	return result;
+}
+
+/*
+ * ============================================================================
+ * Function	: 按键中断处理，使用邮箱通知对应的任务
+ * Input	: TaskHandle_t keyTask 任务指针
+ 			  uint8_t id 按键ID
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void key_irq_handle(TaskHandle_t keyTask, uint8_t id)
+{
+	BaseType_t xHigherPriorityTaskWoken;
+
+	if (keyTask != NULL)
+	{
+		xTaskNotifyFromISR(keyTask, id, eSetValueWithOverwrite, &xHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(xHigherPriorityTaskWoken); //如果需要的话进行一次任务切换
+	}
+}
+
+/*
+ * ============================================================================
+ * Function	: 按键任务函数
+ * Input	: void *parameter 参数指针
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void key_task(void *parameter)
+{
+	uint32_t NotifyValue;
+	uint32_t waitTime = 10;
+	KeyTaskParamter_t *para;
+
+	para = (KeyTaskParamter_t *)parameter;
+
+	set_click_key(para->id, para->scanTime, para->timeOut, para->longPress);
+
+	while (1)
+	{
+		//进入函数的时候不清除任务bit
+		//退出函数的时候清除所有的bit
+		//保存任务通知值
+		if (xTaskNotifyWait(0, ULONG_MAX, &NotifyValue, waitTime))
+		{
+			increase_count(NotifyValue);
+		}
+
+		click_key_deal(para->id, &waitTime);
+		debug("id %u t %u\r\n", para->id, waitTime);
+	}
 }
 
 /*

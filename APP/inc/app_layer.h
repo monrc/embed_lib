@@ -21,7 +21,7 @@
 
 extern TaskHandle_t AppTaskCreateHandle; /* 创建任务句柄 */
 extern TaskHandle_t LedTaskHandle;
-extern TaskHandle_t KeyTaskHandle;
+extern TaskHandle_t keyTask[];
 extern TaskHandle_t TerminalTaskHandle;
 extern TaskHandle_t TestTaskHandle;
 extern TaskHandle_t Test1TaskHandle;

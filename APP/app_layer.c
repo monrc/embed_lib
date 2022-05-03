@@ -4,6 +4,9 @@
 #include "queue.h"
 #include "main.h"
 #include "key.h"
+#include "lib_port.h"
+
+
 
 /*
 *************************************************************************
@@ -12,36 +15,35 @@
 */
 static void Led_Task(void *pvParameters); 		/* LED_Task任务实现 */
 static void Uart_Task(void *pvParameters); 		/* 串口调试任务实现 */
-static void Key_Task(void *parameter);			/* 按键扫描实现 */
 static void Test_Task(void *parameter);
 static void Test1_Task(void *parameter);
 static void led_timer_callback(xTimerHandle timer);
-
-
-static void key0_process(uint8_t type);
-static void key1_process(uint8_t type);
-static void key2_process(uint8_t type);
-static void keyUp_process(uint8_t type);
+static void creat_key_task(void);
 
 
 /**************************** 任务句柄 ********************************/
 TaskHandle_t AppTaskCreateHandle = NULL; /* 创建任务句柄 */
 
 TaskHandle_t LedTaskHandle = NULL;
-TaskHandle_t KeyTaskHandle = NULL;
+
+TaskHandle_t keyTask[4];
+KeyTaskParamter_t keyPara[4];
+
 TaskHandle_t TerminalTaskHandle = NULL;
 TaskHandle_t TestTaskHandle = NULL;
 TaskHandle_t Test1TaskHandle = NULL;
 
-
 TimerHandle_t LedTimerHandle = NULL;	//周期定时器句柄
 
 
-
-/**************************** 队列句柄 ********************************/
-
-
-
+/*
+ * ============================================================================
+ * Function	: 应用初始化
+ * Input	: None
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
 void app_init(void)
 {
 	key_init();
@@ -74,18 +76,9 @@ void AppTaskCreate(void *pvParameters)
 	// 	debug("creat Led_Task succeed!\r\n");
 	// }
 	
-	/* 创建 Key_Task 任务 */
-	xReturn = xTaskCreate((TaskFunction_t)Key_Task,			 /* 任务入口函数 */
-						  (const char *)"Key_Task",			 /* 任务名字 */
-						  (uint16_t)512,					 /* 任务栈大小 */
-						  (void *)NULL,						 /* 任务入口函数参数 */
-						  (UBaseType_t)3,					 /* 任务的优先级 */
-						  (TaskHandle_t *)&KeyTaskHandle); /* 任务控制块指针 */
-	if (pdPASS == xReturn)
-	{
-		debug("creat KEY_Task succeed!\r\n");
-	}
-	
+	/* 创建 按键 任务 */
+	creat_key_task();
+
 	// /* 创建 Uart_Task 任务 */
 	// xReturn = xTaskCreate((TaskFunction_t)Uart_Task,	/* 任务入口函数 */
 	// 					  (const char *)"Uart_Task",	/* 任务名字 */
@@ -176,36 +169,24 @@ static void Uart_Task(void *parameter)
 	// }
 }
 
-/*
-* ============================================================
-* Name		: Key_Task
-* Function	: 按键任务函数
-* Input		: None
-* Output	: None
-* Return	: None
-* ============================================================
-*/
-static void Key_Task(void *parameter)
+
+
+static void creat_key_task(void)
 {
-	uint32_t NotifyValue;
-	uint32_t waitTime = 10;
+	uint8_t i;
+	char name[] = "key ";
 
-	set_click_key(0, 30, 300, 2000);
-	
-	while (1)
+	for (i = 0; i < 4; i++)
 	{
-		//进入函数的时候不清除任务bit
-		//退出函数的时候清除所有的bit
-		//保存任务通知值
-		if (xTaskNotifyWait(0, ULONG_MAX, &NotifyValue, waitTime))
-		{
-			increase_count(NotifyValue);
-		}
+		keyPara[i].id = i;
+		keyPara[i].scanTime = 30;
+		keyPara[i].timeOut = 300;
+		keyPara[i].longPress = 2000;
+		name[3] = i + '0';
 
-		click_key_deal(0, &waitTime);
+		xTaskCreate(key_task, name, 512, &keyPara[i], 3, &keyTask[i]);
 	}
 }
-
 
 /*
 * ============================================================

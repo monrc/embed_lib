@@ -7,7 +7,14 @@
 #include "bsp_layer.h"
 #include "circular_queue.h"
 
-
+/*
+ * ============================================================================
+ * Function	: mainº¯Êý
+ * Input	: None
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
 int main(void)
 {
 	uint32_t i = 0;
