@@ -67,6 +67,7 @@ void print(uint32_t module, uint8_t level, const char *format, ...);
 void print_wait(const char *format, ...);
 
 void uart_send_bytes(uint8_t *buff, uint8_t size);
+void uart_send_byte(uint8_t byte);
 
 void print_array(uint32_t module, const char *name, uint8_t *buff, uint8_t size);
 

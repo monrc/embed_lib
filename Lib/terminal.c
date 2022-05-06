@@ -39,20 +39,27 @@ static void input_echo(void);
 static void output_string(const char *pStr, uint8_t len);
 static bool check_login_cmd(uint8_t index);
 
+
 static void tester_login(uint32_t key);
 static void admin_login(uint32_t key);
 static void software_reset(void);
 static void user_help(void);
 
-
+typedef struct
+{
+	void (*func)();
+	const char *name;
+	const uint8_t paramterNum;
+}CommandTab_t;
 
 //函数指令映射表定义，参数为：函数、命令映射表、函数形参个数
 //指令表在底部，索引号代表着权限的大小，值越大，权限越高
-const Function_map_t stFunTab[] =
+const CommandTab_t sFunTab[] =
 {
 	{user_help, 			"?", 				0},
 	{software_reset, 		"reboot", 			0},
 	{tester_login, 			USER_NAME_TESTER,   1},
+	{led_test, 				"setled", 			4},
 	// {timer_list_print, 		"timerprint", 		0},
 	// {task_list_print,  		"taskprint", 		0},
 	// {timer_test, 		 	"timertest", 		1},
@@ -60,22 +67,40 @@ const Function_map_t stFunTab[] =
 	// {task_list_pop, 		"pop", 				0},
 	{admin_login, 			USER_NAME_ADMIN, 	1},
 };
-#define STFUNTAB_SIZE		(sizeof(stFunTab) / sizeof(stFunTab[0]))
+#define STFUNTAB_SIZE		(sizeof(sFunTab) / sizeof(sFunTab[0]))
+
+#ifdef debug
+	#define printf debug
+#endif
+
+
+typedef struct
+{
+	void (*OutPutCallBack)(uint8_t data);		//打印数据回调函数
+	char recvBuff[RECV_BUFF_ARRAY_SIZE];		//接收缓冲区
+	uint8_t recvLen;							//接收长度
+	uint8_t showLen;							//输入回显长度
+	uint8_t recvLast;							//接收的数据缓存个数
+	uint8_t ctrlType;							//控制字符类型
+	uint8_t userIndexTab[USER_NUMBER];			//用户登陆索引表，在命令表中的索引
+	uint8_t authority;							//访问权限等级，不同用户不同访问限制
+	uint8_t specialCharFlag;					//特殊控制符号标志
+	volatile Control_t flag;					//接收状态处理状态标志
+} Terminal_t;
+
 
 //内部终端模块结构体定义
 static Terminal_t sTerminal;
 
 
 /*
-* ============================================================================
-* Name		: terminal_handler
-* Function	: 终端输入结果分析处理
-* Input		: None
-* Output	: None
-* Return	: None
-* Note		: 该函数适合放在后台程序中调用
-* ============================================================================
-*/
+ * ============================================================================
+ * Function	: 终端输入结果分析处理
+ * Input	: None
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
 void terminal_handler(void)
 {
 	const char backSpace[3] = {'\b', ' ', '\b'};
@@ -171,27 +196,27 @@ void terminal_init(void (*pCallBack)(uint8_t))
 	//函数列表检测
 	for (i = 0; i < STFUNTAB_SIZE; i++)
 	{
-		if (NULL == stFunTab[i].func)
+		if (NULL == sFunTab[i].func)
 		{
-			printf("stFunTab[%u] fun is NULL\r\n", i);
+			printf("sFunTab[%u] fun is NULL\r\n", i);
 		}
 
-		if (0 == strlen(stFunTab[i].pName))
+		if (0 == strlen(sFunTab[i].name))
 		{
-			printf("stFunTab[%u] Name is NULL\r\n", i);
+			printf("sFunTab[%u] Name is NULL\r\n", i);
 		}
 
-		if (FUN_ARGUMENTS_MAX_SIZE < stFunTab[i].paramterNum)
+		if (FUN_ARGUMENTS_MAX_SIZE < sFunTab[i].paramterNum)
 		{
-			printf("stFunTab[%u] ParamterNum is overflow\r\n", i);
+			printf("sFunTab[%u] ParamterNum is overflow\r\n", i);
 		}
 
 		//更新用户登陆索引表
-		if (0 == strcmp(stFunTab[i].pName, USER_NAME_TESTER))
+		if (0 == strcmp(sFunTab[i].name, USER_NAME_TESTER))
 		{
 			sTerminal.userIndexTab[0] = i;
 		}
-		else if (0 == strcmp(stFunTab[i].pName, USER_NAME_ADMIN))
+		else if (0 == strcmp(sFunTab[i].name, USER_NAME_ADMIN))
 		{
 			sTerminal.userIndexTab[1] = i;
 		}
@@ -385,7 +410,7 @@ static void searching_command(void)
 		{
 			if (false == check_login_cmd(i))
 			{
-				printf("%s   ", stFunTab[i].pName);
+				printf("%s   ", sFunTab[i].name);
 			}
 		}
 		printf("\r\n");
@@ -395,7 +420,7 @@ static void searching_command(void)
 	//遍历查找匹配的命令，记录索引号
 	for (i = 0; i < sTerminal.authority; i++)
 	{
-		if (0 == strncmp(stFunTab[i].pName, sTerminal.recvBuff, sTerminal.recvLen))
+		if (0 == strncmp(sFunTab[i].name, sTerminal.recvBuff, sTerminal.recvLen))
 		{
 			if (false == check_login_cmd(i))
 			{
@@ -409,17 +434,17 @@ static void searching_command(void)
 		printf("\r\n");
 		for (i = 0; i < MatchNum; i++)
 		{
-			printf("%s   ", stFunTab[matchIndex[i]].pName);
+			printf("%s   ", sFunTab[matchIndex[i]].name);
 		}
 		printf("\r\n");
 
 		//查找相同的字符，如有命令：add1 add2，输入a之后，按tab显示add
 		while (bMatchFlag)
 		{
-			Char = stFunTab[matchIndex[0]].pName[newLen];
+			Char = sFunTab[matchIndex[0]].name[newLen];
 			for (i = 1; i < MatchNum; i++)
 			{
-				if (Char != stFunTab[matchIndex[i]].pName[newLen])
+				if (Char != sFunTab[matchIndex[i]].name[newLen])
 				{
 					bMatchFlag = false;
 					break;
@@ -429,15 +454,15 @@ static void searching_command(void)
 		}
 
 		newLen--;
-		strncpy(&sTerminal.recvBuff[sTerminal.recvLen], &stFunTab[matchIndex[0]].pName[sTerminal.recvLen], newLen - sTerminal.recvLen);
+		strncpy(&sTerminal.recvBuff[sTerminal.recvLen], &sFunTab[matchIndex[0]].name[sTerminal.recvLen], newLen - sTerminal.recvLen);
 		sTerminal.recvLen = newLen;
 		output_string(sTerminal.recvBuff, sTerminal.recvLen);
 	}
 	else if (1 == MatchNum)	//匹配的命令仅有一个
 	{
-		nameLength = strlen(stFunTab[matchIndex[0]].pName);
+		nameLength = strlen(sFunTab[matchIndex[0]].name);
 		newLen = nameLength - sTerminal.recvLen;		//新增加的字符串长度
-		strncpy(&sTerminal.recvBuff[sTerminal.recvLen], &stFunTab[matchIndex[0]].pName[sTerminal.recvLen], newLen);
+		strncpy(&sTerminal.recvBuff[sTerminal.recvLen], &sFunTab[matchIndex[0]].name[sTerminal.recvLen], newLen);
 		sTerminal.recvBuff[nameLength++] = ' '; 		//添加空格符
 
 		sTerminal.recvLen = nameLength;
@@ -482,7 +507,7 @@ static bool recv_semantic_analysis(void)
 	//查找命令
 	for (i = 0; i < STFUNTAB_SIZE; i++)
 	{
-		if (0 == strncmp(stFunTab[i].pName, &sTerminal.recvBuff[head], cmdLen))
+		if (0 == strncmp(sFunTab[i].name, &sTerminal.recvBuff[head], cmdLen))
 		{
 			cmdIndex = i; //记录命令的位置
 			break;
@@ -500,7 +525,7 @@ static bool recv_semantic_analysis(void)
 	{
 		head = tail + 1;
 		temp = separate_string(&head, ' ', &tail);
-		if (0 == temp || paramterNum >  stFunTab[cmdIndex].paramterNum)
+		if (0 == temp || paramterNum >  sFunTab[cmdIndex].paramterNum)
 		{
 			break;
 		}
@@ -513,7 +538,7 @@ static bool recv_semantic_analysis(void)
 		}
 	}
 
-	if (paramterNum != stFunTab[cmdIndex].paramterNum)
+	if (paramterNum != sFunTab[cmdIndex].paramterNum)
 	{
 		printf("paramter num not match\r\n");
 		bState = false;
@@ -676,32 +701,32 @@ static void execute_handled(uint8_t funIndex, uint32_t *pArg, uint8_t argNum)
 	{
 		case 0:
 		{
-			((void (*)())stFunTab[funIndex].func)();
+			((void (*)())sFunTab[funIndex].func)();
 			break;
 		}
 		case 1:
 		{
-			((void (*)(uint32_t))stFunTab[funIndex].func)(pArg[0]);
+			((void (*)(uint32_t))sFunTab[funIndex].func)(pArg[0]);
 			break;
 		}
 		case 2:
 		{
-			((void (*)(uint32_t, uint32_t))stFunTab[funIndex].func)(pArg[0], pArg[1]);
+			((void (*)(uint32_t, uint32_t))sFunTab[funIndex].func)(pArg[0], pArg[1]);
 			break;
 		}
 		case 3:
 		{
-			((void (*)(uint32_t, uint32_t, uint32_t))stFunTab[funIndex].func)(pArg[0], pArg[1], pArg[2]);
+			((void (*)(uint32_t, uint32_t, uint32_t))sFunTab[funIndex].func)(pArg[0], pArg[1], pArg[2]);
 			break;
 		}
 		case 4:
 		{
-			((void (*)(uint32_t, uint32_t, uint32_t, uint32_t))stFunTab[funIndex].func)(pArg[0], pArg[1], pArg[2], pArg[3]);
+			((void (*)(uint32_t, uint32_t, uint32_t, uint32_t))sFunTab[funIndex].func)(pArg[0], pArg[1], pArg[2], pArg[3]);
 			break;
 		}
 		case 5:
 		{
-			((void (*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t))stFunTab[funIndex].func)(pArg[0], pArg[1], pArg[2],
+			((void (*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t))sFunTab[funIndex].func)(pArg[0], pArg[1], pArg[2],
 					pArg[3], pArg[4]);
 			break;
 		}

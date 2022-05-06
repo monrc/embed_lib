@@ -5,6 +5,9 @@
 #include <stdbool.h>
 
 #include "stm32f1xx_hal.h"
+#include "print.h"
+#include "led.h"
+#include "debug.h"
 
 #define DEFAULT_AUTHORITY		0
 #define USER_NUMBER				2		//用户个数
@@ -34,12 +37,7 @@
 
 //#pragma anon_unions
 
-typedef struct
-{
-	void (*func)();
-	const char *pName;
-	const uint8_t paramterNum;
-} Function_map_t;
+
 
 typedef union
 {
@@ -59,19 +57,6 @@ typedef enum
 	TERMINAL_READY,			//输入了控制符，等待分析处理
 } Terminal_state_t;
 
-typedef struct
-{
-	void (*OutPutCallBack)(uint8_t data);		//打印数据回调函数
-	char recvBuff[RECV_BUFF_ARRAY_SIZE];		//接收缓冲区
-	uint8_t recvLen;							//接收长度
-	uint8_t showLen;							//输入回显长度
-	uint8_t recvLast;							//接收的数据缓存个数
-	uint8_t ctrlType;							//控制字符类型
-	uint8_t userIndexTab[USER_NUMBER];			//用户登陆索引表，在命令表中的索引
-	uint8_t authority;							//访问权限等级，不同用户不同访问限制
-	uint8_t specialCharFlag;					//特殊控制符号标志
-	volatile Control_t flag;					//接收状态处理状态标志
-} Terminal_t;
 
 
 void terminal_input_predeal(uint8_t data);

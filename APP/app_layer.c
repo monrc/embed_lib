@@ -64,32 +64,14 @@ void AppTaskCreate(void *pvParameters)
 
 	taskENTER_CRITICAL(); //进入临界区
 
-	/* 创建 Led_Task 任务 */
-	// xReturn = xTaskCreate((TaskFunction_t)Led_Task,			 /* 任务入口函数 */
-	// 					  (const char *)"Led_Task",			 /* 任务名字 */
-	// 					  (uint16_t)512,					 /* 任务栈大小 */
-	// 					  (void *)NULL,						 /* 任务入口函数参数 */
-	// 					  (UBaseType_t)2,					 /* 任务的优先级 */
-	// 					  (TaskHandle_t *)&LedTaskHandle); /* 任务控制块指针 */
-	// if (pdPASS == xReturn)
-	// {
-	// 	debug("creat Led_Task succeed!\r\n");
-	// }
-	
-	/* 创建 按键 任务 */
+	// 创建LED灯控任务
+	xTaskCreate(led_task, "leds", 256, NULL, 8, NULL);
+
+	// 创建按键任务
 	creat_key_task();
 
-	// /* 创建 Uart_Task 任务 */
-	// xReturn = xTaskCreate((TaskFunction_t)Uart_Task,	/* 任务入口函数 */
-	// 					  (const char *)"Uart_Task",	/* 任务名字 */
-	// 					  (uint16_t)512,					 /* 任务栈大小 */
-	// 					  (void *)NULL,						 /* 任务入口函数参数 */
-	// 					  (UBaseType_t)16,					 /* 任务的优先级 */
-	// 					  (TaskHandle_t *)&TerminalTaskHandle); /* 任务控制块指针 */
-	// if (pdPASS == xReturn)
-	// {
-	// 	debug("creat Uart_Task succeed!\r\n");
-	// }
+	// 创建调试串口任务
+	xTaskCreate(terminal_task, "terminal", 512, NULL, 3, NULL);
 
 	/* 创建 Test_Task 任务 */
 	xReturn = xTaskCreate((TaskFunction_t)Test_Task,	/* 任务入口函数 */
@@ -202,7 +184,6 @@ static void Test_Task(void *parameter)
 	while (1)
 	{
 		vTaskDelay(500); /* 延时500个tick */
-		debug("123456789\r\n");
 		iwdg_refresh();
 	}
 }
@@ -220,7 +201,6 @@ static void Test1_Task(void *parameter)
 {
 	while (1)
 	{
-		debug("123456789\r\n");
 		taskYIELD();
 	}
 }

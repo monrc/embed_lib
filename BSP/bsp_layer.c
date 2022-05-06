@@ -3,13 +3,14 @@
 #include "main.h"
 #include "bsp_layer.h"
 
+static void reset_source_check(void);
 
 void nvic_init(void)
 {
 	HAL_NVIC_SetPriority(USART1_IRQn, 15, 0);
 	HAL_NVIC_EnableIRQ(USART1_IRQn);
 
-	HAL_NVIC_SetPriority(USART2_IRQn, 2, 0);
+	HAL_NVIC_SetPriority(USART2_IRQn, 14, 0);
 	HAL_NVIC_EnableIRQ(USART2_IRQn);
 
 	HAL_NVIC_SetPriority(EXTI0_IRQn, 15, 0);
@@ -24,6 +25,7 @@ void nvic_init(void)
 	HAL_NVIC_SetPriority(EXTI4_IRQn, 15, 0);
 	HAL_NVIC_EnableIRQ(EXTI4_IRQn);
 
+	reset_source_check();
 }
 
 void iwdg_refresh(void)
@@ -60,4 +62,40 @@ void hard_fault_handler_c(unsigned int *hardfault_args)
 	printf("LR [R14] = %x  subroutine call return address\n", stacked_lr);
 	printf("PC [R15] = %x  program counter\n", stacked_pc);
 	printf("PSR = %x\n", stacked_psr);
+}
+
+
+static void reset_source_check(void)
+{
+	if (__HAL_RCC_GET_FLAG(RCC_FLAG_PINRST) != RESET)
+	{
+		print_wait("Pin reset\r\n");
+	}
+	
+	if (__HAL_RCC_GET_FLAG(RCC_FLAG_PORRST) != RESET)
+	{
+		print_wait("POR/PDR reset\r\n");
+	}
+	
+	if (__HAL_RCC_GET_FLAG(RCC_FLAG_SFTRST) != RESET)
+	{
+		print_wait("Software reset\r\n");
+	}
+	
+	if (__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) != RESET)
+	{
+		print_wait("Independent Watchdog reset\r\n");
+	}
+	
+	if (__HAL_RCC_GET_FLAG(RCC_FLAG_WWDGRST) != RESET)
+	{
+		print_wait("Window Watchdog reset\r\n");
+	}
+
+	if (__HAL_RCC_GET_FLAG(RCC_FLAG_LPWRRST) != RESET)
+	{
+		print_wait("Low Power reset\r\n");
+	}
+
+	__HAL_RCC_CLEAR_RESET_FLAGS();
 }

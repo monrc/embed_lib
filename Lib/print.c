@@ -67,7 +67,7 @@ void debug_init(void)
  */
 void print(uint32_t module, uint8_t level, const char *format, ...)
 {
-	uint8_t length;
+	uint8_t size;
 	uint8_t firstByte;
 	char buff[MSG_LEN];
 	va_list ap;			  //声明字符指针 ap
@@ -75,7 +75,7 @@ void print(uint32_t module, uint8_t level, const char *format, ...)
 
 	if ((module & sModuleMask) && level > sPrintLevel)
 	{
-		length = vsnprintf(buff, MSG_LEN, format, ap); //使用参数列表发送格式化输出到字符串
+		size = vsnprintf(buff, MSG_LEN, format, ap); //使用参数列表发送格式化输出到字符串
 	}
 	else
 	{
@@ -84,14 +84,10 @@ void print(uint32_t module, uint8_t level, const char *format, ...)
 
 	while (1)
 	{
-		if (length <= get_remain_num(&sUartQueue))
+		if (size <= get_remain_num(&sUartQueue))
 		{
-			en_queue_bytes(&sUartQueue, buff, length);
+			en_queue_bytes(&sUartQueue, buff, size);
 			break;
-		}
-		else
-		{
-			vTaskDelay(length / 13);
 		}
 	}
 	va_end(ap);
@@ -125,10 +121,6 @@ void uart_send_bytes(uint8_t *buff, uint8_t size)
 			en_queue_bytes(&sUartQueue, buff, size);
 			break;
 		}
-		else
-		{
-			vTaskDelay(size >> 3);
-		}
 	}
 
 	if (sUartIdle)
@@ -139,6 +131,30 @@ void uart_send_bytes(uint8_t *buff, uint8_t size)
 		enable_uart_tx_irq();
 	}
 }
+
+/*
+ * ============================================================================
+ * Function	: 将一个字符输出至缓冲区
+ * Input	: uint8_t byte 字符数据
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void uart_send_byte(uint8_t byte)
+{
+	uint8_t firstByte;
+
+	en_queue(&sUartQueue, &byte);
+
+	if (sUartIdle)
+	{
+		sUartIdle = false;
+		de_queue(&sUartQueue, &firstByte);
+		write_uart_tx_reg(firstByte);
+		enable_uart_tx_irq();
+	}
+}
+
 
 /*
  * ============================================================================
