@@ -8,7 +8,7 @@
 #include <limits.h>
 
 #include "print.h"
-#include "terminal.h"
+#include "console.h"
 
 #include "FreeRTOS.h"
 #include "task.h"

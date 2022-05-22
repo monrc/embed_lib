@@ -59,5 +59,12 @@ void led_task(void *parameter);
 void start_led_task(IODEVICE_t id, uint16_t onTime, uint16_t offTime, uint8_t repeat);
 
 
+/*
+ * ============================================================================
+ * Function	: 其他的相关接口
+ * ============================================================================
+ */
+
+
 
 #endif

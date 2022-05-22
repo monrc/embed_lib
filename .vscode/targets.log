@@ -1,0 +1,1720 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Sun May 22 11:07:34 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AGENT_FOLDER = /home/john/.vscode-server
+# makefile (from 'Makefile', line 169)
+LDSCRIPT = STM32F103ZETx_FLASH.ld
+# environment
+XDG_SESSION_TYPE = tty
+# environment
+VSCODE_LOG_NATIVE = false
+# makefile (from 'Makefile', line 16)
+TARGET = board
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+PLATFORMIO_IDE = 2.4.3
+# makefile (from 'Makefile', line 126)
+AS_DEFS = 
+# makefile (from 'Makefile', line 136)
+AS_INCLUDES = 
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# default
+MAKE_VERSION := 4.2.1
+# makefile
+CURDIR := /mnt/hgfs/Shared/project/stm32_F103
+# makefile
+SHELL = /bin/sh
+# makefile (from 'Makefile', line 106)
+BIN = $(CP) -O binary -S
+# environment
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"42e84e0914b17800d483f69e299e1b00.zh-cn","_translationsConfigFile":"/home/john/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/tcf.json","_cacheRoot":"/home/john/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn","_resolvedLanguagePackCoreLocation":"/home/john/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/john/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/corrupted.info","_languagePackSupport":true}
+# makefile (from 'Makefile', line 103)
+SZ = $(PREFIX)size
+# environment
+_ = /home/john/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
+# makefile (from 'Makefile', line 163)
+CFLAGS = $(CFLAGS_OPT) $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -MMD -MP -MF"$(@:%.o=%.d)"
+# makefile (from 'build/Lib//led.d', line 1)
+MAKEFILE_LIST :=  Makefile build//startup_stm32f103xe.d build/APP//app_layer.d build/APP//main.d build/APP//debug.d build/BSP//bsp_gpio.d build/BSP//retarget.d build/BSP//bsp_layer.d build/BSP//bsp_uart.d build/BSP//interrupt.d build/Core/Src//system_stm32f1xx.d build/Core/Src//stm32f1xx_hal_msp.d build/Core/Src//main.d build/Core/Src//stm32f1xx_it.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pwr.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_i2c.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_sd.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_ll_usb.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rcc.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_flash.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rtc_ex.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_flash_ex.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pcd.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_tim.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rcc_ex.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_iwdg.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pcd_ex.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_uart.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_spi.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_tim_ex.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_gpio.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_exti.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_cortex.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_dma.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_gpio_ex.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_ll_sdmmc.d build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rtc.d build/FreeRTOS//heap_4.d build/FreeRTOS//queue.d build/FreeRTOS//croutine.d build/FreeRTOS//list.d build/FreeRTOS//stream_buffer.d build/FreeRTOS//event_groups.d build/FreeRTOS//tasks.d build/FreeRTOS//timers.d build/FreeRTOS/portable//port.d build/Lib//circular_queue.d build/Lib//print.d build/Lib//terminal.d build/Lib//console.d build/Lib//key.d build/Lib//lib_port.d build/Lib//led.d
+# makefile (from 'Makefile', line 102)
+CP = $(PREFIX)objcopy
+# makefile (from 'Makefile', line 23)
+DEBUG = 1
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+XDG_DATA_DIRS = /home/john/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 101)
+AS = $(PREFIX)gcc -x assembler-with-cpp
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+LC_NAME = zh_CN.UTF-8
+# environment
+VSCODE_CWD = /home/john
+# environment
+SSH_CONNECTION = 192.168.3.20 64761 192.168.3.110 22
+# environment
+NO_PROXY = 127.0.0.1
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+VSCODE_LOG_STACK = false
+# environment
+LC_NUMERIC = zh_CN.UTF-8
+# environment
+VSCODE_IPC_HOOK_CLI = /run/user/1000/vscode-ipc-5e0b0f3b-e1b7-48e7-967d-7506a91a9e22.sock
+# makefile (from 'Makefile', line 175)
+LDFLAGS = $(CFLAGS_OPT) $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
+# automatic
+%F = $(notdir $%)
+# makefile (from 'Makefile', line 84)
+ASM_SOURCES = startup_stm32f103xe.s
+# makefile (from 'Makefile', line 26)
+OPT = -Og
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from 'Makefile', line 29)
+CFLAGS_OPT = 
+# environment
+PWD = /mnt/hgfs/Shared/project/stm32_F103
+# default
+.LOADED := 
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'Makefile', line 222)
+MDK_COMPEILE := MDK-ARM/board
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/john
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+LOGNAME = john
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# makefile (from 'Makefile', line 78)
+C_SOURCES_PATH = APP BSP FreeRTOS FreeRTOS/portable Lib
+# automatic
++F = $(notdir $+)
+# makefile (from 'Makefile', line 91)
+PREFIX = arm-none-eabi-
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from 'Makefile', line 129)
+C_DEFS = -D USE_HAL_DRIVER -D STM32F103xE
+# environment
+MAKELEVEL := 0
+# makefile (from 'Makefile', line 121)
+MCU = $(CPU) -mthumb $(FPU) $(FLOAT-ABI)
+# environment
+PLATFORMIO_PATH = /home/john/.platformio/penv/bin:/home/john/.platformio/penv:/home/john/.platformio/python3/bin:/home/john/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin:/usr/local/arm/gcc-arm-none-eabi-10.3-2021.10/bin
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+PATH = /home/john/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin:/usr/local/arm/gcc-arm-none-eabi-10.3-2021.10/bin
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 105)
+HEX = $(CP) -O ihex
+# makefile (from 'Makefile', line 100)
+CC = $(PREFIX)gcc
+# makefile (from 'Makefile', line 42)
+BUILD_DIR = build
+# makefile (from 'Makefile', line 153)
+ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
+# environment
+XDG_SESSION_ID = 17
+# environment
+USER = john
+# environment
+LC_MONETARY = zh_CN.UTF-8
+# makefile
+.DEFAULT_GOAL := all
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from 'Makefile', line 112)
+CPU = -mcpu=cortex-m3
+# environment
+LC_TELEPHONE = zh_CN.UTF-8
+# default
+MAKE_COMMAND := make
+# makefile (from 'Makefile', line 36)
+LDFLAGS_OPT = -u _printf_float 
+# environment
+OLDPWD = /home/john/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# makefile (from 'Makefile', line 173)
+LIBDIR = 
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile (from 'Makefile', line 194)
+OBJECTS_DIR = $(sort $(dir $(OBJECTS)))
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_CLIENT = 192.168.3.20 64761 22
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+BROWSER = /home/john/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/helpers/browser.sh
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# makefile (from 'Makefile', line 139)
+C_INCLUDES = -I Core/Inc -I Drivers/STM32F1xx_HAL_Driver/Inc -I Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I Drivers/CMSIS/Device/ST/STM32F1xx/Include -I Drivers/CMSIS/Include -I APP/inc -I BSP/inc -I FreeRTOS/include -I FreeRTOS/portable -I Lib/inc 
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+PLATFORMIO_CALLER = vscode
+# automatic
+^F = $(notdir $^)
+# environment
+LC_MEASUREMENT = zh_CN.UTF-8
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 172)
+LIBS = -lc -lm -lnosys 
+# environment
+LC_PAPER = zh_CN.UTF-8
+# makefile (from 'Makefile', line 81)
+C_SOURCES = Core/Src/stm32f1xx_it.c Core/Src/stm32f1xx_hal_msp.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c Core/Src/system_stm32f1xx.c Core/Src/main.c $(foreach dir,$(C_SOURCES_PATH),$(wildcard $(dir)/*.c))
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+LC_IDENTIFICATION = zh_CN.UTF-8
+# default
+.RECIPEPREFIX := 
+# makefile (from 'Makefile', line 190)
+OBJECTS = $(addprefix $(BUILD_DIR)/,$(C_SOURCES:.c=.o)) $(addprefix $(BUILD_DIR)/,$(ASM_SOURCES:.s=.o))
+# environment
+LC_ADDRESS = zh_CN.UTF-8
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+LANG = C
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+MOTD_SHOWN = pam
+# variable set hash-table stats:
+# Load=114/1024=11%, Rehash=0, Collisions=24/309=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# Lib (device 55, inode 1358): 9 files, no impossibilities.
+# build/FreeRTOS/portable/ (device 55, inode 364): 4 files, no impossibilities.
+# build/FreeRTOS/ (device 55, inode 355): 19 files, no impossibilities.
+# build/APP/ (device 55, inode 263): 8 files, no impossibilities.
+# . (device 55, inode 4): 23 files, no impossibilities.
+# build/ (device 55, inode 262): 65 files, no impossibilities.
+# build/Drivers/STM32F1xx_HAL_Driver/Src/ (device 55, inode 305): 50 files, no impossibilities.
+# build/BSP/ (device 55, inode 275): 12 files, no impossibilities.
+# build (device 55, inode 262): 65 files, no impossibilities.
+# Core/Src (device 55, inode 440): No files, no impossibilities so far.
+# FreeRTOS (device 55, inode 1359): 12 files, no impossibilities.
+# FreeRTOS/portable (device 55, inode 1361): 4 files, no impossibilities.
+# BSP (device 55, inode 253): 8 files, no impossibilities.
+# build/Lib/ (device 55, inode 379): 16 files, no impossibilities.
+# APP (device 55, inode 218): 6 files, no impossibilities.
+# build/Core/Src/ (device 55, inode 292): 10 files, no impossibilities.
+# Drivers/STM32F1xx_HAL_Driver/Src (device 55, inode 1434): No files, no impossibilities so far.
+
+# 311 files, no impossibilities in 17 directories.
+
+# Implicit Rules
+
+build/%.o: %.c Makefile | build
+#  recipe to execute (from 'Makefile', line 198):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/%.o: %.s Makefile | build
+ 
+#  recipe to execute (from 'Makefile', line 201):
+	$(AS) -c $(CFLAGS) $< -o $@
+
+build/%.hex: build/%.elf | build
+#  recipe to execute (from 'Makefile', line 208):
+	$(HEX) $< $@
+	
+
+build/%.bin: build/%.elf | build
+#  recipe to execute (from 'Makefile', line 211):
+	$(BIN) $< $@	
+	
+
+# 4 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+FreeRTOS/include/timers.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+BSP/bsp_layer.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/FreeRTOS/timers.o: FreeRTOS/timers.c FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/timers.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Core/Src/stm32f1xx_hal_msp.o: Core/Src/stm32f1xx_hal_msp.c Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/APP//main.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:23
+#  File has been updated.
+#  Successfully updated.
+
+build/Core/Src/main.o: Core/Src/main.c Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+FreeRTOS/include/stream_buffer.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+BSP/retarget.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_spi.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:39
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+APP/inc/debug.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+FreeRTOS/include/semphr.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_flash_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:23
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/FreeRTOS//heap_4.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:32:05
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Lib/print.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/FreeRTOS/croutine.o: FreeRTOS/croutine.c FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/croutine.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/CMSIS/Include/cmsis_version.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:29
+#  File has been updated.
+#  Successfully updated.
+
+build/FreeRTOS/portable/port.o: FreeRTOS/portable/port.c FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/CMSIS/Include/core_cm3.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:29
+#  File has been updated.
+#  Successfully updated.
+
+build/BSP/bsp_layer.o: BSP/bsp_layer.c Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h BSP/inc/bsp_layer.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/timers.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Lib/inc/lib_port.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+BSP/bsp_gpio.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_gpio.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/board.elf: build/Core/Src/stm32f1xx_it.o build/Core/Src/stm32f1xx_hal_msp.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.o build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.o build/Core/Src/system_stm32f1xx.o build/Core/Src/main.o build/APP/app_layer.o build/APP/main.o build/APP/debug.o build/BSP/retarget.o build/BSP/bsp_layer.o build/BSP/interrupt.o build/BSP/bsp_uart.o build/BSP/bsp_gpio.o build/FreeRTOS/stream_buffer.o build/FreeRTOS/heap_4.o build/FreeRTOS/queue.o build/FreeRTOS/croutine.o build/FreeRTOS/list.o build/FreeRTOS/event_groups.o build/FreeRTOS/tasks.o build/FreeRTOS/timers.o build/FreeRTOS/portable/port.o build/Lib/print.o build/Lib/console.o build/Lib/key.o build/Lib/lib_port.o build/Lib/led.o build/Lib/circular_queue.o build/startup_stm32f103xe.o Makefile
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-10 23:22:43
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/15=0%
+#  recipe to execute (from 'Makefile', line 204):
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+	$(SZ) $@
+
+all: build/board.elf build/board.hex build/board.bin
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/15=0%
+
+Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/BSP/retarget.o: BSP/retarget.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/CMSIS/Include/cmsis_gcc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:29
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pcd.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:43:02
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+ 
+
+# Not a target:
+BSP/interrupt.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+FreeRTOS/timers.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_iwdg.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:24
+#  File has been updated.
+#  Successfully updated.
+
+build/BSP/bsp_gpio.o: BSP/bsp_gpio.c BSP/inc/bsp_gpio.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:19
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/include/list.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build//startup_stm32f103xe.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 10:15:01
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Lib//lib_port.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:42
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/FreeRTOS/list.o: FreeRTOS/list.c FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/list.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/FreeRTOS//event_groups.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:32:12
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Lib/inc/key.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rcc.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:20
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/include/croutine.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+FreeRTOS/croutine.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+startup_stm32f103xe.s:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Core/Src/stm32f1xx_it.o: Core/Src/stm32f1xx_it.c Makefile Core/Src/stm32f1xx_it.c Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h Core/Inc/stm32f1xx_it.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Core/Src/stm32f1xx_it'
+#  Last modified 2022-05-04 17:41:30
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build/Core/Src/stm32f1xx_it.o
+# automatic
+# % := 
+# automatic
+# * := Core/Src/stm32f1xx_it
+# automatic
+# + := Core/Src/stm32f1xx_it.c Makefile Core/Src/stm32f1xx_it.c Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h Core/Inc/stm32f1xx_it.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h
+# automatic
+# | := build
+# automatic
+# < := Core/Src/stm32f1xx_it.c
+# automatic
+# ^ := Core/Src/stm32f1xx_it.c Makefile Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h Core/Inc/stm32f1xx_it.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h
+# automatic
+# ? := Makefile
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/27=4%
+#  recipe to execute (from 'Makefile', line 198):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/Lib/terminal.o: Lib/terminal.c Lib/inc/terminal.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h Lib/inc/print.h Lib/inc/led.h APP/inc/debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/APP//debug.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:24
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+FreeRTOS/portable/port.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rtc.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:24
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/BSP/interrupt.o: BSP/interrupt.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/list.h APP/inc/app_layer.h Lib/inc/console.h Lib/inc/print.h Lib/inc/led.h APP/inc/debug.h Lib/inc/lib_port.h FreeRTOS/include/stream_buffer.h FreeRTOS/include/task.h FreeRTOS/include/queue.h FreeRTOS/include/timers.h Lib/inc/lib_port.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_gpio_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:41:31
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/BSP//bsp_uart.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 10:14:44
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-21 18:58:51
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_exti.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:24
+#  File has been updated.
+ 
+#  Successfully updated.
+
+APP/inc/app_layer.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/CMSIS/Include/cmsis_compiler.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:29
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/include/task.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+FreeRTOS/tasks.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/APP/main.o: APP/main.c Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h APP/inc/app_layer.h Lib/inc/console.h Lib/inc/print.h Lib/inc/led.h APP/inc/debug.h Lib/inc/lib_port.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/stream_buffer.h FreeRTOS/include/queue.h FreeRTOS/include/timers.h BSP/inc/bsp_layer.h Lib/inc/circular_queue.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+APP/main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Core/Inc/stm32f1xx_hal_conf.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:27:27
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/board.bin:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Lib//key.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:25
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+Lib/inc/led.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Lib/terminal.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build:
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-10 23:22:43
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 214):
+	for x in $(OBJECTS_DIR); do \
+		mkdir -p $$x; \
+	done
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/FreeRTOS/heap_4.o: FreeRTOS/heap_4.c FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+FreeRTOS/list.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/FreeRTOS//stream_buffer.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:32:04
+#  File has been updated.
+#  Successfully updated.
+
+build/Lib/console.o: Lib/console.c Lib/inc/console.h Lib/inc/print.h Lib/inc/led.h APP/inc/debug.h Lib/inc/lib_port.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/stream_buffer.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/FreeRTOS//queue.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:32:06
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/FreeRTOS//tasks.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:32:13
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Lib/inc/circular_queue.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Core/Src//system_stm32f1xx.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:43:04
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Lib//led.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:26
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Core/Src/system_stm32f1xx.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rcc_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:20
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/include/FreeRTOSConfig.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-01 19:53:56
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rtc_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:26
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Lib/console.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+ 
+
+# Not a target:
+BSP/bsp_uart.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_cortex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:22
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/APP//app_layer.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:23
+#  File has been updated.
+#  Successfully updated.
+
+build/startup_stm32f103xe.o: startup_stm32f103xe.s
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Lib/lib_port.o: Lib/lib_port.c Lib/inc/lib_port.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/stream_buffer.h Lib/inc/led.h Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h Lib/inc/key.h Lib/inc/console.h Lib/inc/print.h APP/inc/debug.h Lib/inc/lib_port.h Lib/inc/led.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_i2c.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:41:31
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/include/event_groups.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/FreeRTOS/event_groups.o: FreeRTOS/event_groups.c FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/timers.h FreeRTOS/include/task.h FreeRTOS/include/event_groups.h FreeRTOS/include/timers.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+BSP/inc/bsp_layer.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Lib//circular_queue.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:33:38
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+FreeRTOS/heap_4.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/APP/debug.o: APP/debug.c Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h APP/inc/debug.h APP/inc/app_layer.h Lib/inc/print.h Lib/inc/console.h Lib/inc/print.h Lib/inc/led.h Lib/inc/lib_port.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/stream_buffer.h FreeRTOS/include/task.h FreeRTOS/include/queue.h FreeRTOS/include/timers.h Lib/inc/key.h Lib/inc/led.h Lib/inc/lib_port.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+APP/debug.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_uart.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:51
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/BSP/bsp_uart.o: BSP/bsp_uart.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_ll_usb.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:43:03
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Lib/lib_port.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+BSP/inc/bsp_gpio.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/Lib/key.o: Lib/key.c Lib/inc/key.h Lib/inc/print.h Lib/inc/lib_port.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/stream_buffer.h Lib/inc/led.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_ll_sdmmc.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:27
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+Lib/inc/print.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 15:59:31
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/include/deprecated_definitions.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+build/FreeRTOS/stream_buffer.o: FreeRTOS/stream_buffer.c FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/stream_buffer.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+FreeRTOS/event_groups.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+FreeRTOS/include/queue.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Core/Inc/main.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-16 22:02:07
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_tim.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:50
+#  File has been updated.
+#  Successfully updated.
+
+build/FreeRTOS/queue.o: FreeRTOS/queue.c FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/queue.h FreeRTOS/include/task.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Lib//print.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:24
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 224):
+	-rm -fR $(BUILD_DIR)
+	find $(MDK_COMPEILE) -name *.d | xargs rm -f
+	find $(MDK_COMPEILE) -name *.o | xargs rm -f
+	find $(MDK_COMPEILE) -name *.crf | xargs rm -f
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Core/Src/system_stm32f1xx.o: Core/Src/system_stm32f1xx.c Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Lib/key.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/FreeRTOS//timers.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Core/Src//stm32f1xx_hal_msp.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:41:31
+#  File has been updated.
+#  Successfully updated.
+
+build/Lib/led.o: Lib/led.c Lib/inc/led.h Lib/inc/lib_port.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/stream_buffer.h Lib/inc/led.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Core/Src//main.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-10 23:02:17
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_sd.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:35
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/include/mpu_wrappers.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Core/Src/stm32f1xx_hal_msp.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pwr.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:22
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/portable/portmacro.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:25
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Core/Src/main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Lib//console.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-10 23:22:42
+#  File has been updated.
+#  Successfully updated.
+
+build/APP/app_layer.o: APP/app_layer.c APP/inc/app_layer.h Lib/inc/print.h Lib/inc/console.h Lib/inc/print.h Lib/inc/led.h APP/inc/debug.h Lib/inc/lib_port.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/stream_buffer.h FreeRTOS/include/task.h FreeRTOS/include/queue.h FreeRTOS/include/timers.h BSP/inc/bsp_layer.h Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h Lib/inc/key.h Lib/inc/lib_port.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/FreeRTOS//croutine.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:32:11
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Core/Src/stm32f1xx_it.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-09 19:08:30
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/FreeRTOS/portable//port.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:32:22
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/BSP//bsp_layer.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:43:06
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/include/FreeRTOS.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/Lib/circular_queue.o: Lib/circular_queue.c Lib/inc/circular_queue.h Lib/inc/print.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+FreeRTOS/include/portable.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Lib/led.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+FreeRTOS/stream_buffer.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/BSP//retarget.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 10:14:43
+#  File has been updated.
+#  Successfully updated.
+ 
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+FreeRTOS/queue.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Lib/inc/terminal.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_flash.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:23
+#  File has been updated.
+#  Successfully updated.
+
+build/FreeRTOS/tasks.o: FreeRTOS/tasks.c FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Lib/inc/print.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/timers.h FreeRTOS/include/task.h FreeRTOS/include/stack_macros.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+APP/app_layer.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/BSP//bsp_gpio.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 10:14:44
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_dma.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:21
+#  File has been updated.
+#  Successfully updated.
+
+Core/Inc/stm32f1xx_it.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-08 23:23:16
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_tim_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:42:50
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Lib/circular_queue.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/FreeRTOS//list.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:32:12
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pcd_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:43:03
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/board.hex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/Core/Src//stm32f1xx_it.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 17:41:30
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/Lib//terminal.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-08 19:37:32
+#  File has been updated.
+#  Successfully updated.
+
+FreeRTOS/include/stack_macros.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+FreeRTOS/include/projdefs.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/BSP//interrupt.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:24
+#  File has been updated.
+#  Successfully updated.
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Lib/print.o: Lib/print.c Lib/inc/print.h Lib/inc/circular_queue.h Lib/inc/print.h Lib/inc/lib_port.h FreeRTOS/include/FreeRTOS.h FreeRTOS/include/FreeRTOSConfig.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h FreeRTOS/include/projdefs.h FreeRTOS/include/portable.h FreeRTOS/include/deprecated_definitions.h FreeRTOS/portable/portmacro.h FreeRTOS/include/mpu_wrappers.h FreeRTOS/include/semphr.h FreeRTOS/include/queue.h FreeRTOS/include/task.h FreeRTOS/include/list.h FreeRTOS/include/stream_buffer.h Lib/inc/led.h FreeRTOS/include/task.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Lib/inc/console.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.o: Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h Core/Inc/stm32f1xx_hal_conf.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h Drivers/CMSIS/Include/core_cm3.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=230/1024=22%, Rehash=0, Collisions=430/3632=12%
+# VPATH Search Paths
+
+vpath %.c APP:BSP:Core/Src:Drivers/STM32F1xx_HAL_Driver/Src:FreeRTOS:FreeRTOS/portable:Lib
+
+# 1 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 2 (0) / strings = 456 / storage = 11963 B / avg = 26 B
+# current buf: size = 8162 B / used = 3862 B / count = 102 / avg = 37 B
+# other used: total = 8101 B / count = 354 / avg = 22 B
+# other free: total = 61 B / max = 61 B / min = 61 B / avg = 61 B
+
+# strcache performance: lookups = 5384 / hit rate = 91%
+# hash-table stats:
+# Load=456/8192=6%, Rehash=0, Collisions=154/5384=3%
+# Finished Make data base on Sun May 22 11:07:34 2022
+
+ 

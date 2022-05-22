@@ -44,6 +44,7 @@ typedef struct
 static void set_green(uint8_t state);
 static void set_blue(uint8_t state);
 static void set_beeper(uint8_t state);
+static void set_leds(uint8_t id, uint8_t state);
 
 func_t funList[] = {
 	set_green,
@@ -63,7 +64,12 @@ Led_t sLed[LED_NUM];
  */
 void led_init(void)
 {
+	uint8_t i;
 	memset(sLed, 0, sizeof(sLed));
+	for (i = 0; i < LED_NUM; i++)
+	{
+		set_leds(i, CLOSE_LED);
+	}
 }
 
 /*

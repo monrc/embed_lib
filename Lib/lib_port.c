@@ -3,7 +3,7 @@
 #include "main.h"
 #include "print.h"
 #include "key.h"
-#include "terminal.h"
+#include "console.h"
 #include "led.h"
 
 StreamBufferHandle_t sUartStreamBuff = NULL; //串口接收信号量
@@ -184,7 +184,7 @@ void terminal_task(void *parameter)
 {
 	uint8_t rxData;
 
-	terminal_init(uart_send_byte);
+	console_init(uart_send_byte);
 
 	sUartStreamBuff = xStreamBufferCreate(10, 1);
 
@@ -192,10 +192,10 @@ void terminal_task(void *parameter)
 	{
 		if (xStreamBufferReceive(sUartStreamBuff, &rxData, 1, portMAX_DELAY))
 		{
-			terminal_input_predeal(rxData);
+			console_input_predeal(rxData);
 		}
 
-		terminal_handler();
+		console_handler();
 	}
 }
 
@@ -293,3 +293,4 @@ void start_led_task(IODEVICE_t id, uint16_t onTime, uint16_t offTime, uint8_t re
 void input_key_deal(uint8_t id, uint8_t keyType)
 {
 }
+

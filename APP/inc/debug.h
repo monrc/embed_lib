@@ -7,4 +7,7 @@
 
 void led_test(uint32_t id, uint32_t on, uint32_t off, uint32_t repeat);
 
+void software_reset(void);
+
+
 #endif
