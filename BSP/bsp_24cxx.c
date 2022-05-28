@@ -71,10 +71,10 @@ void at_24cxx_write(void)
 		writeBuff[i] += 1;
 	}
 
-	//if (HAL_I2C_Mem_Write(&hi2c1, AT24C02_Write, 0, I2C_MEMADD_SIZE_8BIT, writeBuff, 8, 1000) == HAL_OK)
-	// {
-	// 	debug("24cxx write ok\r\n");
-	// }
+	if (HAL_I2C_Mem_Write(&hi2c1, AT24C02_Write, 0, I2C_MEMADD_SIZE_8BIT, writeBuff, 8, 1000) == HAL_OK)
+	{
+		debug("24cxx write ok\r\n");
+	}
 	
 	if (HAL_I2C_Mem_Write_DMA(&hi2c1, AT24C02_Write, 0, I2C_MEMADD_SIZE_8BIT, writeBuff, 8) == HAL_OK)
 	{
@@ -93,8 +93,8 @@ void at_24cxx_read(void)
 		hi2c1.State = HAL_I2C_STATE_READY;
 	}
 
-	//if (HAL_I2C_Mem_Read_DMA(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 8) == HAL_OK)
-	if (HAL_I2C_Mem_Read(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 10, 100) == HAL_OK)
+	if (HAL_I2C_Mem_Read_DMA(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 8) == HAL_OK)
+	//if (HAL_I2C_Mem_Read(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 10, 100) == HAL_OK)
 	{
 		debug("read ok\r\n");
 	}
