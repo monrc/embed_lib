@@ -54,11 +54,17 @@ extern void xPortSysTickHandler(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+#define SVC_Handler SVC_Handler_Remap
+#define PendSV_Handler PendSV_Handler_Remap
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-
+extern DMA_HandleTypeDef hdma_i2c1_rx;
+extern DMA_HandleTypeDef hdma_i2c1_tx;
+extern I2C_HandleTypeDef hi2c1;
+extern DMA_HandleTypeDef hdma_sdio;
+extern DMA_HandleTypeDef hdma_spi2_rx;
+extern DMA_HandleTypeDef hdma_spi2_tx;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -140,6 +146,19 @@ void UsageFault_Handler(void)
 }
 
 /**
+  * @brief This function handles System service call via SWI instruction.
+  */
+void SVC_Handler(void)
+{
+  /* USER CODE BEGIN SVCall_IRQn 0 */
+
+  /* USER CODE END SVCall_IRQn 0 */
+  /* USER CODE BEGIN SVCall_IRQn 1 */
+
+  /* USER CODE END SVCall_IRQn 1 */
+}
+
+/**
   * @brief This function handles Debug monitor.
   */
 void DebugMon_Handler(void)
@@ -150,6 +169,19 @@ void DebugMon_Handler(void)
   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
 
   /* USER CODE END DebugMonitor_IRQn 1 */
+}
+
+/**
+  * @brief This function handles Pendable request for system service.
+  */
+void PendSV_Handler(void)
+{
+  /* USER CODE BEGIN PendSV_IRQn 0 */
+
+  /* USER CODE END PendSV_IRQn 0 */
+  /* USER CODE BEGIN PendSV_IRQn 1 */
+
+  /* USER CODE END PendSV_IRQn 1 */
 }
 
 /**
@@ -180,6 +212,90 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f1xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles DMA1 channel4 global interrupt.
+  */
+void DMA1_Channel4_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Channel4_IRQn 0 */
+
+  /* USER CODE END DMA1_Channel4_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_spi2_rx);
+  /* USER CODE BEGIN DMA1_Channel4_IRQn 1 */
+
+  /* USER CODE END DMA1_Channel4_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA1 channel5 global interrupt.
+  */
+void DMA1_Channel5_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Channel5_IRQn 0 */
+
+  /* USER CODE END DMA1_Channel5_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_spi2_tx);
+  /* USER CODE BEGIN DMA1_Channel5_IRQn 1 */
+
+  /* USER CODE END DMA1_Channel5_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA1 channel6 global interrupt.
+  */
+void DMA1_Channel6_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Channel6_IRQn 0 */
+
+  /* USER CODE END DMA1_Channel6_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_i2c1_tx);
+  /* USER CODE BEGIN DMA1_Channel6_IRQn 1 */
+
+  /* USER CODE END DMA1_Channel6_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA1 channel7 global interrupt.
+  */
+void DMA1_Channel7_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Channel7_IRQn 0 */
+
+  /* USER CODE END DMA1_Channel7_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_i2c1_rx);
+  /* USER CODE BEGIN DMA1_Channel7_IRQn 1 */
+
+  /* USER CODE END DMA1_Channel7_IRQn 1 */
+}
+
+/**
+  * @brief This function handles I2C1 error interrupt.
+  */
+void I2C1_ER_IRQHandler(void)
+{
+  /* USER CODE BEGIN I2C1_ER_IRQn 0 */
+
+  /* USER CODE END I2C1_ER_IRQn 0 */
+  HAL_I2C_ER_IRQHandler(&hi2c1);
+  /* USER CODE BEGIN I2C1_ER_IRQn 1 */
+
+  /* USER CODE END I2C1_ER_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA2 channel4 and channel5 global interrupts.
+  */
+void DMA2_Channel4_5_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA2_Channel4_5_IRQn 0 */
+
+  /* USER CODE END DMA2_Channel4_5_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_sdio);
+  /* USER CODE BEGIN DMA2_Channel4_5_IRQn 1 */
+
+  /* USER CODE END DMA2_Channel4_5_IRQn 1 */
+}
 
 /* USER CODE BEGIN 1 */
 

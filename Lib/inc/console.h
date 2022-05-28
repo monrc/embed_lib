@@ -30,8 +30,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-
-
 /*
  * ============================================================================
  * Function	: 头文件依赖，外部模块
@@ -41,6 +39,11 @@
 #include "led.h"
 #include "debug.h"
 #include "lib_port.h"
+
+
+
+void at_24cxx_write(void);
+void at_24cxx_read(void);
 
 
 /*
@@ -55,6 +58,7 @@
 #define	USER_KEY_TESETER		"123"
 #define USER_NAME_ADMIN			"admin"
 #define	USER_KEY_ADMIN			"12345"
+
 
 
 /*

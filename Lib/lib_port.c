@@ -249,7 +249,6 @@ void led_task(void *parameter)
 
 	while (1)
 	{
-		
 		if (xQueueReceive(sLedQueue, &msg, waitTime))
 		{
 			set_output(msg.id, msg.onCount, msg.offCount, msg.repeat);

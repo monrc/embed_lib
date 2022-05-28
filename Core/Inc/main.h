@@ -24,8 +24,7 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -55,10 +54,6 @@ extern "C"
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
-/* USER CODE END EFP */
-
-/* Private defines -----------------------------------------------------------*/
 #define KEY2_Pin		   GPIO_PIN_2
 #define KEY2_GPIO_Port	   GPIOE
 #define KEY1_Pin		   GPIO_PIN_3
@@ -78,7 +73,25 @@ void Error_Handler(void);
 
 #define BEEP_Pin		   GPIO_PIN_8
 #define BEEP_GPIO_Port	   GPIOB
+/* USER CODE END EFP */
 
+/* Private defines -----------------------------------------------------------*/
+#define KEY2_Pin GPIO_PIN_2
+#define KEY2_GPIO_Port GPIOE
+#define KEY1_Pin GPIO_PIN_3
+#define KEY1_GPIO_Port GPIOE
+#define KEY0_Pin GPIO_PIN_4
+#define KEY0_GPIO_Port GPIOE
+#define LED1_DS1_Pin GPIO_PIN_5
+#define LED1_DS1_GPIO_Port GPIOE
+#define KEY_UP_Pin GPIO_PIN_0
+#define KEY_UP_GPIO_Port GPIOA
+#define FLASH_CS_Pin GPIO_PIN_12
+#define FLASH_CS_GPIO_Port GPIOB
+#define LED0_DS0_Pin GPIO_PIN_5
+#define LED0_DS0_GPIO_Port GPIOB
+#define BEEP_Pin GPIO_PIN_8
+#define BEEP_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 extern I2C_HandleTypeDef hi2c1;
 extern IWDG_HandleTypeDef hiwdg;
@@ -88,6 +101,12 @@ extern SPI_HandleTypeDef hspi2;
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 extern PCD_HandleTypeDef hpcd_USB_FS;
+extern DMA_HandleTypeDef hdma_i2c1_rx;
+extern DMA_HandleTypeDef hdma_i2c1_tx;
+extern I2C_HandleTypeDef hi2c1;
+extern DMA_HandleTypeDef hdma_sdio;
+extern DMA_HandleTypeDef hdma_spi2_rx;
+extern DMA_HandleTypeDef hdma_spi2_tx;
 extern void mcu_init(void);
 /* USER CODE END Private defines */
 

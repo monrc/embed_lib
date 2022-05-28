@@ -41,14 +41,19 @@
 
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
+DMA_HandleTypeDef hdma_i2c1_rx;
+DMA_HandleTypeDef hdma_i2c1_tx;
 
 IWDG_HandleTypeDef hiwdg;
 
 RTC_HandleTypeDef hrtc;
 
 SD_HandleTypeDef hsd;
+DMA_HandleTypeDef hdma_sdio;
 
 SPI_HandleTypeDef hspi2;
+DMA_HandleTypeDef hdma_spi2_rx;
+DMA_HandleTypeDef hdma_spi2_tx;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
@@ -62,6 +67,7 @@ PCD_HandleTypeDef hpcd_USB_FS;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_IWDG_Init(void);
 static void MX_SDIO_SD_Init(void);
@@ -109,6 +115,7 @@ void mcu_init(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_I2C1_Init();
   MX_IWDG_Init();
   MX_SDIO_SD_Init();
@@ -443,6 +450,35 @@ static void MX_USB_PCD_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA2_CLK_ENABLE();
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel4_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
+  /* DMA1_Channel5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
+  /* DMA1_Channel6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel6_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel6_IRQn);
+  /* DMA1_Channel7_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel7_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel7_IRQn);
+  /* DMA2_Channel4_5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Channel4_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Channel4_5_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -466,7 +502,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : KEY2_Pin KEY1_Pin KEY0_Pin */
   GPIO_InitStruct.Pin = KEY2_Pin|KEY1_Pin|KEY0_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
@@ -479,7 +515,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : KEY_UP_Pin */
   GPIO_InitStruct.Pin = KEY_UP_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(KEY_UP_GPIO_Port, &GPIO_InitStruct);
 

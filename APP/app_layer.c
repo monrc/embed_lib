@@ -117,8 +117,6 @@ void AppTaskCreate(void *pvParameters)
 *********************************************************/
 static void Led_Task(void *parameter)
 {
-	uint8_t ledState = 0;
-
 	while (1)
 	{
 		vTaskDelay(500); /* ÑÓÊ±500¸ötick */
