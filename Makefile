@@ -223,7 +223,7 @@ $(BUILD_DIR):
 # clean up
 ##############################################################################
 # keil ±àÒëÆ÷ÎÄ¼þÄ¿Â¼
-MDK_COMPEILE := MDK-ARM/board
+MDK_COMPEILE := CubeMX/MDK-ARM/board
 clean:
 	-rm -fR $(BUILD_DIR)
 	find $(MDK_COMPEILE) -name *.d | xargs rm -f

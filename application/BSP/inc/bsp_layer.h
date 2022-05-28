@@ -11,7 +11,7 @@
 #include "semphr.h"
 #include "timers.h"
 
-// #include "bsp_key.h"
+#include "bsp_24cxx.h"
 // #include "bsp_led.h"
 // #include "bsp_time.h"
 // #include "bsp_uart.h"

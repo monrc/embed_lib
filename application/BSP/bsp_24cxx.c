@@ -3,7 +3,7 @@
 
 #include "main.h"
 #include "bsp_24cxx.h"
-#include "lib_port.h"
+
 
 #define READ_NOTIFIY_BIT	0x01
 #define AT24C02_Write 0xA0
@@ -57,43 +57,52 @@ void bsp_24cxx_init(void)
 void at_24cxx_write(void)
 {
 	uint8_t i;
-	static uint8_t writeBuff[20] = {0};
-	
-	for (i = 0; i < 10; i++)
+	uint8_t writeBuff[256] = {0};
+
+	for (i = 0; i < 64; i++)
 	{
-		writeBuff[i] += 7;
+		writeBuff[i] = i;
+		writeBuff[i + 64] = i;
+		writeBuff[i + 128] = i;
+		writeBuff[i + 192] = i;
 	}
+
+	eeprom_write(0, writeBuff, 256, 20);
+
 
 	// if (HAL_I2C_Mem_Write(&hi2c1, AT24C02_Write, 0, I2C_MEMADD_SIZE_8BIT, writeBuff, 8, 1000) == HAL_OK)
 	// {
 	// 	debug("24cxx write ok\r\n");
 	// }
-	
-	if (HAL_I2C_Mem_Write_DMA(&hi2c1, AT24C02_Write, 1, I2C_MEMADD_SIZE_8BIT, writeBuff, 7) == HAL_OK)
-	{
-		debug("24cxx write ok\r\n");
-	}
 }
 
 
 void at_24cxx_read(void)
 {
-	uint8_t readBuff[10] = {0};
+	uint8_t readBuff[256] = {0};
 	
-	if (hi2c1.State != HAL_I2C_STATE_READY)
-	{
-		debug("state %02x\r\n", hi2c1.State);
-		hi2c1.State = HAL_I2C_STATE_READY;
-	}
+	eeprom_read(0, readBuff, 256, 20);
 
-	if (HAL_I2C_Mem_Read_DMA(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 8) == HAL_OK)
-	//if (HAL_I2C_Mem_Read(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 10, 100) == HAL_OK)
-	{
-		debug("read ok\r\n");
-	}
+	
+	print_array(LOG_PRINT, "Bank1", &readBuff[0], 64);
+	print_array(LOG_PRINT, "Bank2", &readBuff[64], 64);
+	print_array(LOG_PRINT, "Bank3", &readBuff[128], 64);
+	print_array(LOG_PRINT, "Bank4", &readBuff[192], 64);
 
-	HAL_Delay(500);
-	print_array(LOG_PRINT, "rx", readBuff, 10);
+	// if (hi2c1.State != HAL_I2C_STATE_READY)
+	// {
+	// 	debug("state %02x\r\n", hi2c1.State);
+	// 	hi2c1.State = HAL_I2C_STATE_READY;
+	// }
+
+	// if (HAL_I2C_Mem_Read_DMA(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 8) == HAL_OK)
+	// //if (HAL_I2C_Mem_Read(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 10, 100) == HAL_OK)
+	// {
+	// 	debug("read ok\r\n");
+	// }
+
+	// HAL_Delay(500);
+	// print_array(LOG_PRINT, "rx", readBuff, 10);
 }
 
 
@@ -108,15 +117,13 @@ void at_24cxx_read(void)
 void eeprom_task(void *parameter)
 {
 	EepromMessage_t message;
-
-	uint8_t size;
+	uint16_t size, i;
 	uint8_t addr;
-	uint8_t i;
 	uint8_t pageRemain;
-	uint8_t sendBuff[10];
 	uint32_t notifyValue;
+	uint8_t *buff;
 
-	sEepromQueue = xQueueCreate(5, sizeof(EepromMessage_t));
+	sEepromQueue = xQueueCreate(3, sizeof(EepromMessage_t));
 
 	while (1)
 	{
@@ -125,6 +132,8 @@ void eeprom_task(void *parameter)
 		if (message.type == AT24C02_Write)	//写数据
 		{
 			addr = message.addr;
+			buff = message.buff;
+			
 			for (i = 0; i < message.size; i += size)
 			{
 				size = message.size - i;	//本次需要写入的个数
@@ -139,24 +148,32 @@ void eeprom_task(void *parameter)
 					size = pageRemain;
 				}
 
-				HAL_I2C_Mem_Write_DMA(&hi2c1, AT24C02_Write, addr, I2C_MEMADD_SIZE_8BIT, sendBuff, size);
+				if (HAL_I2C_Mem_Write_DMA(&hi2c1, AT24C02_Write, addr, I2C_MEMADD_SIZE_8BIT, buff, size) != HAL_OK)
+				{
+					debug_error("eeprom write fail\r\n");
+				}
+
 				addr += size;
+				buff += size;
 				vTaskDelay(5);
 			}
+
 			vPortFree(message.buff);
 		}
 		else if (message.type == AT24C02_Read)	//读数据
 		{
-			HAL_I2C_Mem_Read_DMA(&hi2c1, AT24C02_Read, message.addr, I2C_MEMADD_SIZE_8BIT, message.buff, message.size);
+			if (HAL_I2C_Mem_Read_DMA(&hi2c1, AT24C02_Read, message.addr, I2C_MEMADD_SIZE_8BIT, message.buff, message.size) != HAL_OK)
+			{
+				debug_error("eeprom read fail\r\n");
+			}
+
 			if (xTaskNotifyWait(0, ULONG_MAX, &notifyValue, 5))
 			{
-				xTaskNotify(message.task, READ_NOTIFIY_BIT, eSetBits);
+				xTaskNotify(message.task, READ_NOTIFIY_BIT, eSetBits);	//通知任务完成数据读取
 			}
 		}
 	}
 }
-
-
 
 /*
  * ============================================================================
@@ -177,7 +194,18 @@ void eeprom_irq_handle(TaskHandle_t task)
 	}
 }
 
-void eeprom_write(uint8_t addr, uint8_t *data, uint8_t size, uint32_t waitTime)
+/*
+ * ============================================================================
+ * Function	: EEPROM写数据接口
+ * Input	: uint8_t addr 地址
+			  uint8_t *data 数据指针
+			  uint8_t size 数据大小
+			  uint32_t 写入等待的超时时间
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void eeprom_write(uint8_t addr, uint8_t *data, uint16_t size, uint32_t waitTime)
 {
 	EepromMessage_t message;
 
@@ -195,8 +223,17 @@ void eeprom_write(uint8_t addr, uint8_t *data, uint8_t size, uint32_t waitTime)
 	}
 }
 
-
-uint8_t eeprom_read(uint8_t addr, uint8_t *data, uint8_t size, uint32_t waitTime)
+/*
+ * ============================================================================
+ * Function	: EEPROM读取数据接口
+ * Input	: uint8_t addr 地址
+			  uint8_t size 读取的字节大小
+			  uint32_t waitTime 读取等待的超时时间
+ * Output	: uint8_t *data 数据指针
+ * Return	: None
+ * ============================================================================
+ */
+uint8_t eeprom_read(uint8_t addr, uint8_t *data, uint16_t size, uint32_t waitTime)
 {
 	EepromMessage_t message;
 	uint32_t notifyValue;
@@ -224,3 +261,4 @@ uint8_t eeprom_read(uint8_t addr, uint8_t *data, uint8_t size, uint32_t waitTime
 		return false;
 	}
 }
+

@@ -24,12 +24,11 @@ static void creat_key_task(void);
 /**************************** 任务句柄 ********************************/
 TaskHandle_t AppTaskCreateHandle = NULL; /* 创建任务句柄 */
 
-TaskHandle_t LedTaskHandle = NULL;
+TaskHandle_t eepromTaskHandle = NULL;
 
 TaskHandle_t keyTask[4];
 KeyTaskParamter_t keyPara[4];
 
-TaskHandle_t TerminalTaskHandle = NULL;
 TaskHandle_t TestTaskHandle = NULL;
 TaskHandle_t Test1TaskHandle = NULL;
 
@@ -71,8 +70,11 @@ void AppTaskCreate(void *pvParameters)
 	creat_key_task();
 
 	// 创建调试串口任务
-	xTaskCreate(terminal_task, "terminal", 512, NULL, 3, NULL);
+	xTaskCreate(terminal_task, "terminal", 1024, NULL, 3, NULL);
 
+	// 创建调试串口任务
+	xTaskCreate(eeprom_task, "eeprom", 512, NULL, 16, &eepromTaskHandle);
+	
 	/* 创建 Test_Task 任务 */
 	xReturn = xTaskCreate((TaskFunction_t)Test_Task,	/* 任务入口函数 */
 						  (const char *)"Test_Task",	/* 任务名字 */

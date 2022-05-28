@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat May 28 17:01:59 2022
+# Make data base, printed on Sat May 28 17:28:28 2022
 
 # Variables
 
@@ -20,6 +20,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 XDG_SESSION_CLASS = user
 # environment
 VSCODE_AGENT_FOLDER = /home/john/.vscode-server
+ 
 # makefile (from 'Makefile', line 173)
 LDSCRIPT = STM32F103ZETx_FLASH.ld
 # environment
@@ -49,7 +50,6 @@ SHELL = /bin/sh
 # makefile (from 'Makefile', line 110)
 BIN = $(CP) -O binary -S
 # environment
- 
 VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"42e84e0914b17800d483f69e299e1b00.zh-cn","_translationsConfigFile":"/home/john/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/tcf.json","_cacheRoot":"/home/john/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn","_resolvedLanguagePackCoreLocation":"/home/john/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/john/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/corrupted.info","_languagePackSupport":true}
 # makefile (from 'Makefile', line 107)
 SZ = $(PREFIX)size
@@ -57,8 +57,8 @@ SZ = $(PREFIX)size
 _ = /home/john/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
 # makefile (from 'Makefile', line 167)
 CFLAGS = $(CFLAGS_OPT) $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -MMD -MP -MF"$(@:%.o=%.d)"
-# makefile (from 'build//startup_stm32f103xe.d', line 1)
-MAKEFILE_LIST :=  Makefile build//startup_stm32f103xe.d
+# makefile (from 'build/application/Lib//led.d', line 1)
+MAKEFILE_LIST :=  Makefile build//startup_stm32f103xe.d build/CubeMX/Core/Src//system_stm32f1xx.d build/CubeMX/Core/Src//stm32f1xx_hal_msp.d build/CubeMX/Core/Src//main.d build/CubeMX/Core/Src//stm32f1xx_it.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pwr.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_i2c.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_sd.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_ll_usb.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rcc.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_flash.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rtc_ex.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_flash_ex.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pcd.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_tim.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rcc_ex.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_iwdg.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pcd_ex.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_uart.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_spi.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_tim_ex.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_gpio.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_exti.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_cortex.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_dma.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_gpio_ex.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_ll_sdmmc.d build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rtc.d build/application/APP//app_layer.d build/application/APP//main.d build/application/APP//debug.d build/application/BSP//bsp_gpio.d build/application/BSP//retarget.d build/application/BSP//bsp_layer.d build/application/BSP//bsp_uart.d build/application/BSP//interrupt.d build/application/BSP//bsp_24cxx.d build/application/FreeRTOS//heap_4.d build/application/FreeRTOS//queue.d build/application/FreeRTOS//croutine.d build/application/FreeRTOS//list.d build/application/FreeRTOS//stream_buffer.d build/application/FreeRTOS//event_groups.d build/application/FreeRTOS//tasks.d build/application/FreeRTOS//timers.d build/application/FreeRTOS/portable//port.d build/application/Lib//circular_queue.d build/application/Lib//print.d build/application/Lib//console.d build/application/Lib//key.d build/application/Lib//lib_port.d build/application/Lib//led.d
 # makefile (from 'Makefile', line 106)
 CP = $(PREFIX)objcopy
 # makefile (from 'Makefile', line 23)
@@ -114,7 +114,7 @@ PWD = /mnt/hgfs/Shared/project/stm32_F103
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # makefile (from 'Makefile', line 226)
-MDK_COMPEILE := MDK-ARM/board
+MDK_COMPEILE := CubeMX/MDK-ARM/board
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -238,7 +238,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 MOTD_SHOWN = pam
 # variable set hash-table stats:
-# Load=113/1024=11%, Rehash=0, Collisions=24/204=12%
+# Load=113/1024=11%, Rehash=0, Collisions=22/293=8%
 
 # Pattern-specific Variable Values
 
@@ -246,25 +246,25 @@ MOTD_SHOWN = pam
 
 # Directories
 
-# build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/: could not be stat'd.
-# build/application/Lib/: could not be stat'd.
+# build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/ (device 55, inode 19620): 50 files, no impossibilities.
+# build/application/Lib/ (device 55, inode 19626): 14 files, no impossibilities.
 # application/FreeRTOS (device 55, inode 17309): 12 files, no impossibilities.
-# . (device 55, inode 5870): 17 files, no impossibilities.
-# application/FreeRTOS/portable (device 55, inode 17311): 4 files, no impossibilities.
-# build/application/FreeRTOS/portable/: could not be stat'd.
-# CubeMX/Drivers/STM32F1xx_HAL_Driver/Src (device 55, inode 17465): No files, no impossibilities so far.
-# application/APP (device 55, inode 17305): 6 files, no impossibilities.
+# . (device 55, inode 5870): 16 files, no impossibilities.
+# application/FreeRTOS/portable (device 55, inode 19474): 4 files, no impossibilities.
+# build/application/FreeRTOS/portable/ (device 55, inode 19625): 4 files, no impossibilities.
+# CubeMX/Drivers/STM32F1xx_HAL_Driver/Src (device 55, inode 17465): 63 files, no impossibilities.
+# application/APP (device 55, inode 19457): 6 files, no impossibilities.
 # application/BSP (device 55, inode 17307): 9 files, no impossibilities.
-# build/application/FreeRTOS/: could not be stat'd.
-# build (device 55, inode 6317): 66 files, no impossibilities.
-# build/application/APP/: could not be stat'd.
-# build/application/BSP/: could not be stat'd.
-# CubeMX/Core/Src (device 55, inode 17317): 5 files, no impossibilities so far.
-# build/ (device 55, inode 6317): 66 files, no impossibilities.
-# build/CubeMX/Core/Src/: could not be stat'd.
+# build/application/FreeRTOS/ (device 55, inode 19624): 19 files, no impossibilities.
+# build (device 55, inode 19614): 61 files, no impossibilities.
+# build/application/APP/ (device 55, inode 19622): 8 files, no impossibilities.
+# build/application/BSP/ (device 55, inode 19623): 14 files, no impossibilities.
+# CubeMX/Core/Src (device 55, inode 19543): 6 files, no impossibilities.
+# build/ (device 55, inode 19614): 61 files, no impossibilities.
+# build/CubeMX/Core/Src/ (device 55, inode 19617): 10 files, no impossibilities.
 # application/Lib (device 55, inode 17312): 9 files, no impossibilities.
 
-# 194 files, no impossibilities in 17 directories.
+# 366 files, no impossibilities in 17 directories.
 
 # Implicit Rules
 
@@ -291,50 +291,159 @@ build/%.bin: build/%.elf | build
 
 # Files
 
-# Not a target:
-build/application/BSP/bsp_gpio.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/application/FreeRTOS/list.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/application/BSP/interrupt.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
  
+build/application/BSP/bsp_gpio.o: application/BSP/bsp_gpio.c Makefile application/BSP/bsp_gpio.c CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h application/BSP/inc/bsp_layer.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/timers.h application/BSP/inc/bsp_gpio.h application/BSP/inc/bsp_24cxx.h application/Lib/inc/lib_port.h application/FreeRTOS/include/stream_buffer.h application/Lib/inc/led.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/BSP/bsp_gpio'
+#  Last modified 2022-05-28 17:27:50
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/BSP/bsp_gpio.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-22 15:37:12
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c'
+#  Last modified 2022-05-28 17:27:24
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/application/FreeRTOS/list.o: application/FreeRTOS/list.c Makefile application/FreeRTOS/list.c application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/list.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/FreeRTOS/list'
+#  Last modified 2022-05-28 17:27:56
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/FreeRTOS/croutine.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:20
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+application/FreeRTOS/list.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:20
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/FreeRTOS//event_groups.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:56
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/BSP//bsp_24cxx.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:51
+#  File has been updated.
+#  Successfully updated.
+
+application/Lib/inc/led.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-24 23:14:28
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/APP//debug.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:49
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart'
+#  Last modified 2022-05-28 17:27:45
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_flash.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:27
+#  File has been updated.
+#  Successfully updated.
+
+build/application/BSP/interrupt.o: application/BSP/interrupt.c Makefile application/BSP/interrupt.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/APP/inc/app_layer.h application/Lib/inc/console.h application/Lib/inc/print.h application/Lib/inc/led.h application/APP/inc/debug.h application/Lib/inc/lib_port.h application/FreeRTOS/include/stream_buffer.h application/FreeRTOS/include/task.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/timers.h application/Lib/inc/lib_port.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/BSP/interrupt'
+#  Last modified 2022-05-28 17:27:50
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/BSP/interrupt.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 18:53:09
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb'
+#  Last modified 2022-05-28 17:27:47
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+build/application/BSP//bsp_uart.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:50
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
 build/board.elf: build/CubeMX/Core/Src/stm32f1xx_it.o build/CubeMX/Core/Src/stm32f1xx_hal_msp.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.o build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.o build/CubeMX/Core/Src/system_stm32f1xx.o build/CubeMX/Core/Src/main.o build/application/APP/app_layer.o build/application/APP/main.o build/application/APP/debug.o build/application/BSP/retarget.o build/application/BSP/bsp_layer.o build/application/BSP/interrupt.o build/application/BSP/bsp_uart.o build/application/BSP/bsp_gpio.o build/application/BSP/bsp_24cxx.o build/application/FreeRTOS/stream_buffer.o build/application/FreeRTOS/heap_4.o build/application/FreeRTOS/queue.o build/application/FreeRTOS/croutine.o build/application/FreeRTOS/list.o build/application/FreeRTOS/event_groups.o build/application/FreeRTOS/tasks.o build/application/FreeRTOS/timers.o build/application/FreeRTOS/portable/port.o build/application/Lib/print.o build/application/Lib/console.o build/application/Lib/key.o build/application/Lib/lib_port.o build/application/Lib/led.o build/application/Lib/circular_queue.o build/startup_stm32f103xe.o Makefile
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-28 14:45:02
+#  Last modified 2022-05-28 17:28:08
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/15=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 208):
 	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
 	$(SZ) $@
@@ -344,46 +453,185 @@ all: build/board.elf build/board.hex build/board.bin
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/15=0%
+#  Successfully updated.
 
-# Not a target:
-build/application/APP/main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/application/FreeRTOS/heap_4.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build//startup_stm32f103xe.d:
+application/APP/inc/app_layer.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-22 17:19:35
+#  Last modified 2022-05-09 22:41:27
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_dma.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:25
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/FreeRTOSConfig.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-01 19:53:56
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Core/Inc/stm32f1xx_it.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 16:51:31
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/Lib/console.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_tim_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:40
+#  File has been updated.
+#  Successfully updated.
+
+build/application/APP/main.o: application/APP/main.c Makefile application/APP/main.c CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/APP/inc/app_layer.h application/Lib/inc/console.h application/Lib/inc/print.h application/Lib/inc/led.h application/APP/inc/debug.h application/Lib/inc/lib_port.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/stream_buffer.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/timers.h application/BSP/inc/bsp_layer.h application/Lib/inc/circular_queue.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/APP/main'
+#  Last modified 2022-05-28 17:27:48
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/APP/main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 11:26:36
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+application/Lib/inc/circular_queue.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-10 11:09:05
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+ 
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc'
+#  Last modified 2022-05-28 17:27:32
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pcd_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:46
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/event_groups.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Core/Src//stm32f1xx_it.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:06
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/application/FreeRTOS/heap_4.o: application/FreeRTOS/heap_4.c Makefile application/FreeRTOS/heap_4.c application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/FreeRTOS/heap_4'
+#  Last modified 2022-05-28 17:27:53
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/FreeRTOS/heap_4.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:32
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build//startup_stm32f103xe.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:28:07
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim'
+#  Last modified 2022-05-28 17:27:40
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/application/Lib/console.o: application/Lib/console.c Makefile application/Lib/console.c application/Lib/inc/console.h application/Lib/inc/print.h application/Lib/inc/led.h application/APP/inc/debug.h application/Lib/inc/lib_port.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/stream_buffer.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/Lib/console'
+#  Last modified 2022-05-28 17:28:06
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/Lib/console.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:24:43
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/FreeRTOS//queue.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:53
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 CubeMX/Core/Src/stm32f1xx_it.c:
@@ -392,76 +640,257 @@ CubeMX/Core/Src/stm32f1xx_it.c:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd'
+#  Last modified 2022-05-28 17:27:46
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
 startup_stm32f103xe.s:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Core/Src/stm32f1xx_hal_msp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Core/Src/main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-28 17:01:20
+#  Last modified 2022-03-29 23:58:54
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Core/Src/stm32f1xx_hal_msp.o: CubeMX/Core/Src/stm32f1xx_hal_msp.c Makefile CubeMX/Core/Src/stm32f1xx_hal_msp.c CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Core/Src/stm32f1xx_hal_msp'
+#  Last modified 2022-05-28 17:27:06
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Core/Src/main.o: CubeMX/Core/Src/main.c Makefile CubeMX/Core/Src/main.c CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Core/Src/main'
+#  Last modified 2022-05-28 17:27:48
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd'
+#  Last modified 2022-05-28 17:27:35
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_cortex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:26
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-build/application/Lib/lib_port.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/application/Lib//led.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:28:06
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/task.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-24 23:10:28
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr'
+#  Last modified 2022-05-28 17:27:27
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/board.bin:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_spi.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:35
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/FreeRTOS/event_groups.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:26:50
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/BSP/bsp_24cxx.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_flash_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:27
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+application/Lib/inc/print.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 15:59:31
+#  File has been updated.
+ 
+#  Successfully updated.
+
+# Not a target:
+build/application/APP//app_layer.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:48
+#  File has been updated.
+#  Successfully updated.
+
+build/application/Lib/lib_port.o: application/Lib/lib_port.c Makefile application/Lib/lib_port.c application/Lib/inc/lib_port.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/stream_buffer.h application/Lib/inc/led.h CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h application/Lib/inc/key.h application/Lib/inc/console.h application/Lib/inc/print.h application/APP/inc/debug.h application/Lib/inc/lib_port.h application/Lib/inc/led.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/Lib/lib_port'
+#  Last modified 2022-05-28 17:28:06
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+application/Lib/lib_port.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-23 23:00:27
+#  File has been updated.
+#  Successfully updated.
+
+build/board.bin: build/board.elf | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'board'
+#  Last modified 2022-05-28 17:28:08
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 215):
+	$(BIN) $< $@	
+	
+
+application/FreeRTOS/include/stream_buffer.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/deprecated_definitions.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+build/application/FreeRTOS/event_groups.o: application/FreeRTOS/event_groups.c Makefile application/FreeRTOS/event_groups.c application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/timers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/event_groups.h application/FreeRTOS/include/timers.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/FreeRTOS/event_groups'
+#  Last modified 2022-05-28 17:27:56
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/application/BSP/bsp_24cxx.o: application/BSP/bsp_24cxx.c Makefile application/BSP/bsp_24cxx.c CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h application/BSP/inc/bsp_24cxx.h application/Lib/inc/lib_port.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/stream_buffer.h application/Lib/inc/led.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/BSP/bsp_24cxx'
+#  Last modified 2022-05-28 17:27:52
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/FreeRTOS/event_groups.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:20
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/queue.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-24 23:22:28
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/Lib//print.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:28:03
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+application/BSP/bsp_24cxx.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:20:40
+#  File has been updated.
+#  Successfully updated.
 
 build:
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-28 14:45:02
+#  Last modified 2022-05-28 17:28:08
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 218):
@@ -469,116 +898,394 @@ build:
 		mkdir -p $$x; \
 	done
 
-# Not a target:
-build/application/APP/debug.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/application/BSP/bsp_uart.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/application/Lib/key.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-build/CubeMX/Core/Src/stm32f1xx_it.o: CubeMX/Core/Src/stm32f1xx_it.c Makefile | build
+build/application/APP/debug.o: application/APP/debug.c Makefile application/APP/debug.c CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h application/APP/inc/debug.h application/APP/inc/app_layer.h application/Lib/inc/print.h application/Lib/inc/console.h application/Lib/inc/print.h application/Lib/inc/led.h application/Lib/inc/lib_port.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/stream_buffer.h application/FreeRTOS/include/task.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/timers.h application/Lib/inc/key.h application/Lib/inc/led.h application/Lib/inc/lib_port.h | build
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'CubeMX/Core/Src/stm32f1xx_it'
-#  File does not exist.
+#  Implicit/static pattern stem: 'application/APP/debug'
+#  Last modified 2022-05-28 17:27:49
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := build/CubeMX/Core/Src/stm32f1xx_it.o
-# automatic
-# % := 
-# automatic
-# * := CubeMX/Core/Src/stm32f1xx_it
-# automatic
-# + := CubeMX/Core/Src/stm32f1xx_it.c Makefile
-# automatic
-# | := build
-# automatic
-# < := CubeMX/Core/Src/stm32f1xx_it.c
-# automatic
-# ^ := CubeMX/Core/Src/stm32f1xx_it.c Makefile
-# automatic
-# ? := CubeMX/Core/Src/stm32f1xx_it.c Makefile
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/27=4%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 202):
 	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
 	
 
-build/startup_stm32f103xe.o: startup_stm32f103xe.s
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+# Not a target:
+build/application/Lib//lib_port.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:28:06
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/FreeRTOS/stream_buffer.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+application/APP/debug.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:54:51
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash'
+#  Last modified 2022-05-28 17:27:27
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/application/FreeRTOS/queue.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+application/BSP/inc/bsp_gpio.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-01 20:10:22
+#  File has been updated.
+#  Successfully updated.
+
+build/application/BSP/bsp_uart.o: application/BSP/bsp_uart.c Makefile application/BSP/bsp_uart.c | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/BSP/bsp_uart'
+#  Last modified 2022-05-28 17:27:50
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+application/BSP/bsp_uart.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-01 20:08:27
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/Lib/led.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_gpio.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:25
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_iwdg.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:28
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/mpu_wrappers.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma'
+#  Last modified 2022-05-28 17:27:26
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex'
+#  Last modified 2022-05-28 17:27:40
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/portable/portmacro.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:25
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal.d:
+ 
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:24
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+application/BSP/inc/bsp_layer.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-05 12:03:57
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/application/Lib/key.o: application/Lib/key.c Makefile application/Lib/key.c application/Lib/inc/key.h application/Lib/inc/print.h application/Lib/inc/lib_port.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/stream_buffer.h application/Lib/inc/led.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/Lib/key'
+#  Last modified 2022-05-28 17:28:06
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex'
+#  Last modified 2022-05-28 17:27:46
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rcc.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:24
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Core/Src/stm32f1xx_it.o: CubeMX/Core/Src/stm32f1xx_it.c Makefile CubeMX/Core/Src/stm32f1xx_it.c CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h CubeMX/Core/Inc/stm32f1xx_it.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Core/Src/stm32f1xx_it'
+#  Last modified 2022-05-28 17:27:06
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+application/FreeRTOS/include/FreeRTOS.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rtc.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:28
+#  File has been updated.
+#  Successfully updated.
+
+build/startup_stm32f103xe.o: startup_stm32f103xe.s Makefile startup_stm32f103xe.s | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'startup_stm32f103xe'
+#  Last modified 2022-05-28 17:28:07
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 205):
+	$(AS) -c $(CFLAGS) $< -o $@
+
+build/application/FreeRTOS/stream_buffer.o: application/FreeRTOS/stream_buffer.c Makefile application/FreeRTOS/stream_buffer.c application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/stream_buffer.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/FreeRTOS/stream_buffer'
+#  Last modified 2022-05-28 17:27:52
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/FreeRTOS/stream_buffer.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:20
+#  File has been updated.
+#  Successfully updated.
+
+build/application/FreeRTOS/queue.o: application/FreeRTOS/queue.c Makefile application/FreeRTOS/queue.c application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/FreeRTOS/queue'
+#  Last modified 2022-05-28 17:27:55
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+application/FreeRTOS/queue.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:20
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_exti.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:28
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/FreeRTOS//timers.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:28:02
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex'
+#  Last modified 2022-05-28 17:27:26
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/application/Lib/led.o: application/Lib/led.c Makefile application/Lib/led.c application/Lib/inc/led.h application/Lib/inc/lib_port.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/stream_buffer.h application/Lib/inc/led.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/Lib/led'
+#  Last modified 2022-05-28 17:28:07
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/Lib/led.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-06 21:59:37
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/portable.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi'
+#  Last modified 2022-05-28 17:27:40
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+application/FreeRTOS/include/semphr.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pcd.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:45
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex'
+#  Last modified 2022-05-28 17:27:27
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+ 
+	
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_tim.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:40
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -586,139 +1293,725 @@ build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-build/application/APP/app_layer.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/application/APP/app_layer.o: application/APP/app_layer.c Makefile application/APP/app_layer.c application/APP/inc/app_layer.h application/Lib/inc/print.h application/Lib/inc/console.h application/Lib/inc/print.h application/Lib/inc/led.h application/APP/inc/debug.h application/Lib/inc/lib_port.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/stream_buffer.h application/FreeRTOS/include/task.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/timers.h application/BSP/inc/bsp_layer.h CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h application/Lib/inc/key.h application/Lib/inc/lib_port.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/APP/app_layer'
+#  Last modified 2022-05-28 17:27:48
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/application/Lib/circular_queue.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/application/FreeRTOS//croutine.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:55
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+application/APP/app_layer.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-22 17:26:41
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_gpio_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:07
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/FreeRTOS/portable//port.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:28:03
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/stack_macros.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/projdefs.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/BSP//bsp_layer.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:49
+#  File has been updated.
+#  Successfully updated.
+
+build/application/Lib/circular_queue.o: application/Lib/circular_queue.c Makefile application/Lib/circular_queue.c application/Lib/inc/circular_queue.h application/Lib/inc/print.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/Lib/circular_queue'
+#  Last modified 2022-05-28 17:28:07
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+application/Lib/circular_queue.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-10 11:09:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/Lib//circular_queue.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:28:07
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Core/Src//system_stm32f1xx.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:47
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+application/Lib/key.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 13:39:55
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/BSP//retarget.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:49
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+application/FreeRTOS/timers.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:20
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Core/Src/system_stm32f1xx.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-05 12:33:40
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/FreeRTOS//tasks.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:56
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/timers.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rcc_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:25
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/CMSIS/Include/cmsis_version.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:29
+#  File has been updated.
+#  Successfully updated.
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 228):
 	-rm -fR $(BUILD_DIR)
 	find $(MDK_COMPEILE) -name *.d | xargs rm -f
 	find $(MDK_COMPEILE) -name *.o | xargs rm -f
 	find $(MDK_COMPEILE) -name *.crf | xargs rm -f
 
-# Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+CubeMX/Drivers/CMSIS/Include/core_cm3.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:29
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio'
+#  Last modified 2022-05-28 17:27:25
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg'
+#  Last modified 2022-05-28 17:27:28
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_rtc_ex.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:29
+#  File has been updated.
+#  Successfully updated.
+
+application/Lib/inc/console.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:23:51
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/application/BSP//bsp_gpio.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:50
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal'
+#  Last modified 2022-05-28 17:27:24
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:29
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+application/Lib/inc/key.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-01 20:53:28
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/application/FreeRTOS//list.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:55
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/croutine.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Core/Inc/stm32f1xx_hal_conf.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 16:51:31
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/Lib/print.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc'
+#  Last modified 2022-05-28 17:27:25
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc'
+#  Last modified 2022-05-28 17:27:29
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_uart.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:40
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/FreeRTOS/timers.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_i2c.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:07
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/FreeRTOS/croutine.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/application/BSP//interrupt.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:49
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/application/FreeRTOS//stream_buffer.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:52
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/FreeRTOS/portable/port.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/application/Lib//key.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:28:06
+#  File has been updated.
+#  Successfully updated.
+
+build/application/Lib/print.o: application/Lib/print.c Makefile application/Lib/print.c application/Lib/inc/print.h application/Lib/inc/circular_queue.h application/Lib/inc/print.h application/Lib/inc/lib_port.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/stream_buffer.h application/Lib/inc/led.h application/FreeRTOS/include/task.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/Lib/print'
+#  Last modified 2022-05-28 17:28:03
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/application/BSP/bsp_layer.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_ll_usb.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:46
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/board.hex:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/CubeMX/Core/Src/system_stm32f1xx.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+application/Lib/print.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 16:00:14
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti'
+#  Last modified 2022-05-28 17:27:28
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/application/BSP/retarget.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/application/FreeRTOS/tasks.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+application/Lib/inc/lib_port.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:01
+#  File has been updated.
+#  Successfully updated.
+
+build/application/FreeRTOS/timers.o: application/FreeRTOS/timers.c Makefile application/FreeRTOS/timers.c application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/timers.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/FreeRTOS/timers'
+#  Last modified 2022-05-28 17:28:03
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+build/application/APP//main.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:48
+#  File has been updated.
+#  Successfully updated.
+
+application/BSP/inc/bsp_24cxx.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:20:59
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_ll_sdmmc.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:31
+#  File has been updated.
+#  Successfully updated.
+
+application/FreeRTOS/include/list.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:21
+#  File has been updated.
+#  Successfully updated.
+
+application/APP/inc/debug.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 23:55:11
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:29
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/application/FreeRTOS//heap_4.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:53
+#  File has been updated.
+#  Successfully updated.
+
+build/application/FreeRTOS/croutine.o: application/FreeRTOS/croutine.c Makefile application/FreeRTOS/croutine.c application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/croutine.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/FreeRTOS/croutine'
+#  Last modified 2022-05-28 17:27:55
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+CubeMX/Core/Inc/main.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 16:51:31
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+ 
+#  Successfully updated.
+
+# Not a target:
+build/application/Lib//console.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:28:04
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex'
+#  Last modified 2022-05-28 17:27:07
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/application/FreeRTOS/portable/port.o: application/FreeRTOS/portable/port.c Makefile application/FreeRTOS/portable/port.c application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/FreeRTOS/portable/port'
+#  Last modified 2022-05-28 17:28:03
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/application/BSP/bsp_layer.o: application/BSP/bsp_layer.c Makefile application/BSP/bsp_layer.c CubeMX/Core/Inc/main.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h application/BSP/inc/bsp_layer.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/task.h application/FreeRTOS/include/semphr.h application/FreeRTOS/include/queue.h application/FreeRTOS/include/timers.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/BSP/bsp_layer'
+#  Last modified 2022-05-28 17:27:49
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/FreeRTOS/portable/port.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:24
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+application/BSP/bsp_layer.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 14:13:59
+#  File has been updated.
+#  Successfully updated.
+
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/board.hex: build/board.elf | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'board'
+#  Last modified 2022-05-28 17:28:08
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 212):
+	$(HEX) $< $@
+	
+
+build/CubeMX/Core/Src/system_stm32f1xx.o: CubeMX/Core/Src/system_stm32f1xx.c Makefile CubeMX/Core/Src/system_stm32f1xx.c CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Core/Src/system_stm32f1xx'
+#  Last modified 2022-05-28 17:27:47
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/application/BSP/retarget.o: application/BSP/retarget.c Makefile application/BSP/retarget.c | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/BSP/retarget'
+#  Last modified 2022-05-28 17:27:49
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/BSP/retarget.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-10 19:34:41
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Core/Src//stm32f1xx_hal_msp.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:06
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Core/Src//main.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:47
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_sd.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:32
+#  File has been updated.
+#  Successfully updated.
+
+build/application/FreeRTOS/tasks.o: application/FreeRTOS/tasks.c Makefile application/FreeRTOS/tasks.c application/FreeRTOS/include/FreeRTOS.h application/FreeRTOS/include/FreeRTOSConfig.h application/Lib/inc/print.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h application/FreeRTOS/include/projdefs.h application/FreeRTOS/include/portable.h application/FreeRTOS/include/deprecated_definitions.h application/FreeRTOS/portable/portmacro.h application/FreeRTOS/include/mpu_wrappers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/list.h application/FreeRTOS/include/timers.h application/FreeRTOS/include/task.h application/FreeRTOS/include/stack_macros.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'application/FreeRTOS/tasks'
+#  Last modified 2022-05-28 17:28:02
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex'
+#  Last modified 2022-05-28 17:27:25
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+application/FreeRTOS/tasks.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-02 23:32:20
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Core/Src/stm32f1xx_hal_msp.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 16:51:31
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src//stm32f1xx_hal_pwr.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:27:26
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Core/Src/main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 16:51:31
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+build/CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.o: CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c Makefile CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h CubeMX/Core/Inc/stm32f1xx_hal_conf.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h CubeMX/Drivers/CMSIS/Include/core_cm3.h CubeMX/Drivers/CMSIS/Include/cmsis_version.h CubeMX/Drivers/CMSIS/Include/cmsis_compiler.h CubeMX/Drivers/CMSIS/Include/cmsis_gcc.h CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h | build
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex'
+#  Last modified 2022-05-28 17:27:30
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 202):
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-20 14:16:59
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=65/1024=6%, Rehash=0, Collisions=5/144=3%
+# Load=230/1024=22%, Rehash=0, Collisions=502/4131=12%
 # VPATH Search Paths
 
 vpath %.c CubeMX/Core/Src:CubeMX/Drivers/STM32F1xx_HAL_Driver/Src:application/APP:application/BSP:application/FreeRTOS:application/FreeRTOS/portable:application/Lib
@@ -727,12 +2020,14 @@ vpath %.c CubeMX/Core/Src:CubeMX/Drivers/STM32F1xx_HAL_Driver/Src:application/AP
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 196 / storage = 4751 B / avg = 24 B
-# current buf: size = 8162 B / used = 4751 B / count = 196 / avg = 24 B
+# strcache buffers: 3 (2) / strings = 572 / storage = 17685 B / avg = 30 B
+# current buf: size = 8162 B / used = 1389 B / count = 66 / avg = 21 B
+# other used: total = 16296 B / count = 506 / avg = 32 B
+# other free: total = 28 B / max = 19 B / min = 9 B / avg = 14 B
 
-# strcache performance: lookups = 252 / hit rate = 22%
+# strcache performance: lookups = 6068 / hit rate = 90%
 # hash-table stats:
-# Load=196/8192=2%, Rehash=0, Collisions=12/252=5%
-# Finished Make data base on Sat May 28 17:01:59 2022
+# Load=572/8192=7%, Rehash=0, Collisions=369/6068=6%
+# Finished Make data base on Sat May 28 17:28:28 2022
 
  

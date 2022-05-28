@@ -2,3 +2,6 @@
 .cache/*
 build/*
 MDK-ARM/board/*
+.vscode/configurationCache.log
+.gitignore
+.vscode/targets.log

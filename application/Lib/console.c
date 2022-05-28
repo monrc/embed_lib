@@ -26,8 +26,8 @@ const CommandTab_t sFunTab[] =
 	{software_reset, "reboot", 0},
 	{tester_login, USER_NAME_TESTER, STRING_PARAMETER},
 	
-	{at_24cxx_read, "24read", 0},
-	{at_24cxx_write, "24write", 0},
+	{at_24cxx_read, "eepromread", 0},
+	{at_24cxx_write, "eepromwrite", 0},
 	
 	{led_test, "setled", 4},
 
