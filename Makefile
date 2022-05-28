@@ -45,37 +45,41 @@ BUILD_DIR = build
 # source
 ######################################
 C_SOURCES =  \
-Core/Src/stm32f1xx_it.c \
-Core/Src/stm32f1xx_hal_msp.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c \
-Core/Src/system_stm32f1xx.c \
-Core/Src/main.c
+CubeMX/Core/Src/stm32f1xx_it.c \
+CubeMX/Core/Src/stm32f1xx_hal_msp.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c \
+CubeMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c \
+CubeMX/Core/Src/system_stm32f1xx.c \
+CubeMX/Core/Src/main.c
 
 # 自动添加c文件目录
-C_SOURCES_PATH = APP BSP FreeRTOS FreeRTOS/portable Lib
+C_SOURCES_PATH = application/APP \
+				 application/BSP \
+				 application/FreeRTOS \
+				 application/FreeRTOS/portable \
+				 application/Lib
 
 #添加 C_SOURCES_PATH 目录下所有c文件列表
 C_SOURCES += $(foreach dir,$(C_SOURCES_PATH),$(wildcard $(dir)/*.c))
@@ -137,16 +141,16 @@ AS_INCLUDES =
 
 # C includes
 C_INCLUDES =  \
--I Core/Inc \
--I Drivers/STM32F1xx_HAL_Driver/Inc \
--I Drivers/STM32F1xx_HAL_Driver/Inc/Legacy \
--I Drivers/CMSIS/Device/ST/STM32F1xx/Include \
--I Drivers/CMSIS/Include \
--I APP/inc \
--I BSP/inc \
--I FreeRTOS/include \
--I FreeRTOS/portable \
--I Lib/inc 
+-I CubeMX/Core/Inc \
+-I CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc \
+-I CubeMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy \
+-I CubeMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include \
+-I CubeMX/Drivers/CMSIS/Include \
+-I application/APP/inc \
+-I application/BSP/inc \
+-I application/FreeRTOS/include \
+-I application/FreeRTOS/portable \
+-I application/Lib/inc 
 
 
 # compile gcc flags

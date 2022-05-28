@@ -5,18 +5,11 @@
 #include "bsp_24cxx.h"
 #include "lib_port.h"
 
-#define TXBUFFERSIZE 25
-#define RXBUFFERSIZE 25
-#define I2C_ADDRESS	 0x30F
-
+#define READ_NOTIFIY_BIT	0x01
 #define AT24C02_Write 0xA0
 #define AT24C02_Read  0xA1
 
-uint8_t aTxBuffer[] = " ****I2C_TwoBoards communication based on DMA****  ****I2C_TwoBoards communication based on";
-
 QueueHandle_t sEepromQueue = NULL;
-
-
 
 #if 0
 void bsp_24cxx_init(void)
@@ -68,15 +61,15 @@ void at_24cxx_write(void)
 	
 	for (i = 0; i < 10; i++)
 	{
-		writeBuff[i] += 1;
+		writeBuff[i] += 7;
 	}
 
-	if (HAL_I2C_Mem_Write(&hi2c1, AT24C02_Write, 0, I2C_MEMADD_SIZE_8BIT, writeBuff, 8, 1000) == HAL_OK)
-	{
-		debug("24cxx write ok\r\n");
-	}
+	// if (HAL_I2C_Mem_Write(&hi2c1, AT24C02_Write, 0, I2C_MEMADD_SIZE_8BIT, writeBuff, 8, 1000) == HAL_OK)
+	// {
+	// 	debug("24cxx write ok\r\n");
+	// }
 	
-	if (HAL_I2C_Mem_Write_DMA(&hi2c1, AT24C02_Write, 0, I2C_MEMADD_SIZE_8BIT, writeBuff, 8) == HAL_OK)
+	if (HAL_I2C_Mem_Write_DMA(&hi2c1, AT24C02_Write, 1, I2C_MEMADD_SIZE_8BIT, writeBuff, 7) == HAL_OK)
 	{
 		debug("24cxx write ok\r\n");
 	}
@@ -114,48 +107,77 @@ void at_24cxx_read(void)
  */
 void eeprom_task(void *parameter)
 {
-	EepromMessage_t msg;
+	EepromMessage_t message;
 
 	uint8_t size;
 	uint8_t addr;
 	uint8_t i;
+	uint8_t pageRemain;
 	uint8_t sendBuff[10];
-
-	led_init();
+	uint32_t notifyValue;
 
 	sEepromQueue = xQueueCreate(5, sizeof(EepromMessage_t));
 
 	while (1)
 	{
-		xQueueReceive(sEepromQueue, &msg, portMAX_DELAY);
-		if (msg.type == AT24C02_Write)
+		xQueueReceive(sEepromQueue, &message, portMAX_DELAY);
+		
+		if (message.type == AT24C02_Write)	//写数据
 		{
-			addr = msg.addr;
-			for (i = 0; i < msg.size; i += size)
+			addr = message.addr;
+			for (i = 0; i < message.size; i += size)
 			{
-				size = msg.size - i;
+				size = message.size - i;	//本次需要写入的个数
 				if (size > 8)
 				{
 					size = 8;
 				}
-				
-				sendBuff[0] = addr;
-				memcpy(&sendBuff[1], msg.buff + i, size);
-				HAL_I2C_Master_Transmit_DMA(&hi2c1, AT24C02_Write, sendBuff, size + 1);
+
+				pageRemain = 8 - addr % 8;	//依据写入地址获取剩余的可以写入的个数
+				if (pageRemain < 8 && pageRemain < size)
+				{
+					size = pageRemain;
+				}
+
+				HAL_I2C_Mem_Write_DMA(&hi2c1, AT24C02_Write, addr, I2C_MEMADD_SIZE_8BIT, sendBuff, size);
 				addr += size;
 				vTaskDelay(5);
 			}
-			vPortFree(msg.buff);
+			vPortFree(message.buff);
 		}
-		else if (msg.type == AT24C02_Read)
+		else if (message.type == AT24C02_Read)	//读数据
 		{
-
-			xTaskNotify(msg.task, 0x01, eSetBits);
+			HAL_I2C_Mem_Read_DMA(&hi2c1, AT24C02_Read, message.addr, I2C_MEMADD_SIZE_8BIT, message.buff, message.size);
+			if (xTaskNotifyWait(0, ULONG_MAX, &notifyValue, 5))
+			{
+				xTaskNotify(message.task, READ_NOTIFIY_BIT, eSetBits);
+			}
 		}
 	}
 }
 
-void eeprom_write(uint8_t addr, uint8_t *data, uint8_t size)
+
+
+/*
+ * ============================================================================
+ * Function	: EEPROM，DMA读取完成中断处理，使用邮箱通知对应的任务
+ * Input	: TaskHandle_t task 任务指针
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void eeprom_irq_handle(TaskHandle_t task)
+{
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+	if (task != NULL)
+	{
+		xTaskNotifyFromISR(task, READ_NOTIFIY_BIT, eSetValueWithOverwrite, &xHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(xHigherPriorityTaskWoken); //如果需要的话进行一次任务切换
+	}
+}
+
+void eeprom_write(uint8_t addr, uint8_t *data, uint8_t size, uint32_t waitTime)
 {
 	EepromMessage_t message;
 
@@ -167,16 +189,17 @@ void eeprom_write(uint8_t addr, uint8_t *data, uint8_t size)
 
 	memcpy(message.buff, data, size);
 
-	if (xQueueSend(sEepromQueue, &message, 20) != pdPASS)
+	if (xQueueSend(sEepromQueue, &message, waitTime) != pdPASS)
 	{
 		vPortFree(message.buff);
 	}
 }
 
 
-void eeprom_read(uint8_t addr, uint8_t *data, uint8_t size)
+uint8_t eeprom_read(uint8_t addr, uint8_t *data, uint8_t size, uint32_t waitTime)
 {
 	EepromMessage_t message;
+	uint32_t notifyValue;
 
 	message.addr = addr;
 	message.buff = data;
@@ -185,6 +208,19 @@ void eeprom_read(uint8_t addr, uint8_t *data, uint8_t size)
 	message.type = AT24C02_Read;
 	xQueueSend(sEepromQueue, &message, portMAX_DELAY);
 	
-	
-
+	if (xTaskNotifyWait(0, READ_NOTIFIY_BIT, &notifyValue, waitTime))
+	{
+		if (notifyValue & READ_NOTIFIY_BIT)
+		{
+			return true;
+		}
+		else
+		{
+			return false; 
+		}
+	}
+	else
+	{
+		return false;
+	}
 }
