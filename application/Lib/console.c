@@ -29,6 +29,7 @@ const CommandTab_t sFunTab[] =
 	{at_24cxx_read, "eepromread", 0},
 	{at_24cxx_write, "eepromwrite", 0},
 	
+	{test, "test", 0},
 	{led_test, "setled", 4},
 
 	{admin_login, USER_NAME_ADMIN, STRING_PARAMETER},
@@ -496,7 +497,8 @@ static bool semantic_analysis(void)
 	//查找命令
 	for (i = 0; i < STFUNTAB_SIZE; i++)
 	{
-		if (0 == strncmp(sFunTab[i].name, &sConsole.buff[head], cmdLen))
+		if (0 == strncmp(sFunTab[i].name, &sConsole.buff[head], cmdLen)
+			&& cmdLen == strlen(sFunTab[i].name))
 		{
 			cmdIndex = i; //记录命令的位置
 			break;

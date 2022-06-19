@@ -5,7 +5,7 @@
 #include "bsp_24cxx.h"
 
 
-#define READ_NOTIFIY_BIT	0x01
+#define READ_NOTIFIY_BIT	0x80000000
 #define AT24C02_Write 0xA0
 #define AT24C02_Read  0xA1
 
@@ -82,27 +82,12 @@ void at_24cxx_read(void)
 	uint8_t readBuff[256] = {0};
 	
 	eeprom_read(0, readBuff, 256, 20);
-
 	
 	print_array(LOG_PRINT, "Bank1", &readBuff[0], 64);
 	print_array(LOG_PRINT, "Bank2", &readBuff[64], 64);
 	print_array(LOG_PRINT, "Bank3", &readBuff[128], 64);
 	print_array(LOG_PRINT, "Bank4", &readBuff[192], 64);
 
-	// if (hi2c1.State != HAL_I2C_STATE_READY)
-	// {
-	// 	debug("state %02x\r\n", hi2c1.State);
-	// 	hi2c1.State = HAL_I2C_STATE_READY;
-	// }
-
-	// if (HAL_I2C_Mem_Read_DMA(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 8) == HAL_OK)
-	// //if (HAL_I2C_Mem_Read(&hi2c1, AT24C02_Read, 0, I2C_MEMADD_SIZE_8BIT, readBuff, 10, 100) == HAL_OK)
-	// {
-	// 	debug("read ok\r\n");
-	// }
-
-	// HAL_Delay(500);
-	// print_array(LOG_PRINT, "rx", readBuff, 10);
 }
 
 

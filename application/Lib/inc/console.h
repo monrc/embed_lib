@@ -44,6 +44,7 @@
 
 void at_24cxx_write(void);
 void at_24cxx_read(void);
+void test(void);
 
 
 /*

@@ -26,6 +26,8 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "app_layer.h"
+#include "bsp_layer.h"
+#include "app_layer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
