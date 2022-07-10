@@ -5,11 +5,12 @@
 #include "bsp_24cxx.h"
 
 
-#define READ_NOTIFIY_BIT	0x80000000
+#define AT24C02_NOTIFY_BIT	0x80000000
 #define AT24C02_Write 0xA0
 #define AT24C02_Read  0xA1
 
 QueueHandle_t sEepromQueue = NULL;
+TaskHandle_t sEepromTaskHandle = NULL;
 
 #if 0
 void bsp_24cxx_init(void)
@@ -90,6 +91,20 @@ void at_24cxx_read(void)
 
 }
 
+/*
+ * ============================================================================
+ * Function	: EEPROM初始化函数，创建任务函数
+ * Input	: void *parameter 参数指针
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void create_eeprom_task(void)
+{
+	sEepromQueue = xQueueCreate(3, sizeof(EepromMessage_t));
+
+	xTaskCreate(eeprom_task, "eeprom", 512, NULL, 16, &sEepromTaskHandle);
+}
 
 /*
  * ============================================================================
@@ -107,8 +122,6 @@ void eeprom_task(void *parameter)
 	uint8_t pageRemain;
 	uint32_t notifyValue;
 	uint8_t *buff;
-
-	sEepromQueue = xQueueCreate(3, sizeof(EepromMessage_t));
 
 	while (1)
 	{
@@ -154,7 +167,7 @@ void eeprom_task(void *parameter)
 
 			if (xTaskNotifyWait(0, ULONG_MAX, &notifyValue, 5))
 			{
-				xTaskNotify(message.task, READ_NOTIFIY_BIT, eSetBits);	//通知任务完成数据读取
+				xTaskNotify(message.task, AT24C02_NOTIFY_BIT, eSetBits);	//通知任务完成数据读取
 			}
 		}
 	}
@@ -163,18 +176,18 @@ void eeprom_task(void *parameter)
 /*
  * ============================================================================
  * Function	: EEPROM，DMA读取完成中断处理，使用邮箱通知对应的任务
- * Input	: TaskHandle_t task 任务指针
+ * Input	: None
  * Output	: None
  * Return	: None
  * ============================================================================
  */
-void eeprom_irq_handle(TaskHandle_t task)
+void eeprom_irq_handle(void)
 {
 	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-	if (task != NULL)
+	if (sEepromTaskHandle != NULL)
 	{
-		xTaskNotifyFromISR(task, READ_NOTIFIY_BIT, eSetValueWithOverwrite, &xHigherPriorityTaskWoken);
+		xTaskNotifyFromISR(sEepromTaskHandle, AT24C02_NOTIFY_BIT, eSetValueWithOverwrite, &xHigherPriorityTaskWoken);
 		portYIELD_FROM_ISR(xHigherPriorityTaskWoken); //如果需要的话进行一次任务切换
 	}
 }
@@ -230,9 +243,9 @@ uint8_t eeprom_read(uint8_t addr, uint8_t *data, uint16_t size, uint32_t waitTim
 	message.type = AT24C02_Read;
 	xQueueSend(sEepromQueue, &message, portMAX_DELAY);
 	
-	if (xTaskNotifyWait(0, READ_NOTIFIY_BIT, &notifyValue, waitTime))
+	if (xTaskNotifyWait(0, AT24C02_NOTIFY_BIT, &notifyValue, waitTime))
 	{
-		if (notifyValue & READ_NOTIFIY_BIT)
+		if (notifyValue & AT24C02_NOTIFY_BIT)
 		{
 			return true;
 		}

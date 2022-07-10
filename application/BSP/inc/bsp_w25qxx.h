@@ -146,13 +146,34 @@ typedef struct
 	};
 } W25QXX_t;
 
-typedef struct
-{
-	uint8_t type;
-	uint32_t addr;
-	uint8_t *buff;
-	uint32_t size;
-	TaskHandle_t task;
-} FlashMessage_t;
+
+#define program_pag(addr, buff, size, waitTime)			w25qxx_page_program(PAGE_PROGRAM, addr, buff, size, waitTime)
+#define program_security(addr, buff, size, waitTime)	w25qxx_page_program(PROGRAM_SECURITY_REG, addr, buff, size, waitTime)
+
+#define read_data(addr, buff, size, waitTime)			w25qxx_read_data(READ_DATA, addr, buff, size, waitTime)
+#define fast_read(addr, buff, size, waitTime)			w25qxx_read_data(FAST_READ, addr, buff, size, waitTime)
+#define read_security(addr, buff, size, waitTime)		w25qxx_read_data(READ_SECURITY_REG, addr, buff, size, waitTime)
+
+
+
+void w25qxx_single_cmd(uint8_t cmd);
+
+uint8_t w25qxx_read_status(uint8_t cmd);
+
+void w25qxx_write_status(uint8_t status1, uint8_t status2);
+
+void w25qxx_erase(uint8_t cmd, uint32_t addr);
+
+uint8_t w25qxx_release_powerdown(void);
+
+void w25qxx_read_device_info(uint8_t *manufacturer, uint8_t *deviceID);
+
+void w25qxx_read_jedec_id(uint8_t *manufacturer, uint8_t *memoryType, uint8_t *capacity);
+
+void w25qxx_read_uid(uint8_t *id);
+
+void w25qxx_page_program(uint8_t cmd, uint32_t addr, uint8_t *buff, uint32_t size, uint32_t waitTime);
+
+uint8_t w25qxx_read_data(uint8_t cmd, uint8_t addr, uint8_t *buff, uint16_t size, uint32_t waitTime);
 
 #endif

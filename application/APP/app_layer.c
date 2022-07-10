@@ -14,7 +14,6 @@
 *************************************************************************
 */
 static void Led_Task(void *pvParameters); 		/* LED_Task任务实现 */
-static void Uart_Task(void *pvParameters); 		/* 串口调试任务实现 */
 static void Test_Task(void *parameter);
 static void Test1_Task(void *parameter);
 static void led_timer_callback(xTimerHandle timer);
@@ -24,7 +23,7 @@ static void creat_key_task(void);
 /**************************** 任务句柄 ********************************/
 TaskHandle_t AppTaskCreateHandle = NULL; /* 创建任务句柄 */
 
-TaskHandle_t eepromTaskHandle = NULL;
+
 
 TaskHandle_t keyTask[4];
 KeyTaskParamter_t keyPara[4];
@@ -45,8 +44,8 @@ TimerHandle_t LedTimerHandle = NULL;	//周期定时器句柄
  */
 void app_init(void)
 {
-	key_init();
-	debug_init();
+	
+	
 }
 
 
@@ -70,10 +69,13 @@ void AppTaskCreate(void *pvParameters)
 	creat_key_task();
 
 	// 创建调试串口任务
-	xTaskCreate(terminal_task, "terminal", 1024, NULL, 3, NULL);
+	xTaskCreate(terminal_task, "terminal", 1024, NULL, 2, NULL);
 
-	// 创建调试串口任务
-	xTaskCreate(eeprom_task, "eeprom", 512, NULL, 16, &eepromTaskHandle);
+	// 创建EEPORM任务
+	create_eeprom_task();
+
+	// 创建SPI任务，操作FLASH
+	create_spi_task();
 	
 	/* 创建 Test_Task 任务 */
 	xReturn = xTaskCreate((TaskFunction_t)Test_Task,	/* 任务入口函数 */
@@ -127,36 +129,13 @@ static void Led_Task(void *parameter)
 	}
 }
 
-/*********************************************************
-* Name		: Uart_Task
-* Function	: 终端模块参数初始化
-*********************************************************/
-static void Uart_Task(void *parameter)
-{
-    uint8_t uartInput;
-
-    // terminal_init(uart2_output);
-	// init_print();
-   
-    // gUartQueueHandle = xQueueCreate(10, 1); //创建消息Message_Queue,队列项长度是串口接收缓冲区长度
-	
-	// while (1)
-	// {
-	// 	if (xQueueReceive(gUartQueueHandle, &uartInput, portMAX_DELAY))
-	// 	{
-    //         terminal_input_predeal(uartInput);
-	// 	}
-        
-    //     terminal_handler();
-	// }
-}
-
-
 
 static void creat_key_task(void)
 {
 	uint8_t i;
 	char name[] = "key ";
+	
+	key_init();
 
 	for (i = 0; i < 4; i++)
 	{

@@ -25,7 +25,7 @@ int main(void)
 
 	nvic_init();
 	
-	app_init();
+	debug_init();
 
 	/* 创建AppTaskCreate任务 */
 	xReturn = xTaskCreate((TaskFunction_t)AppTaskCreate,		 /* 任务入口函数 */

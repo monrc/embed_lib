@@ -73,6 +73,14 @@ void Error_Handler(void);
 
 #define BEEP_Pin		   GPIO_PIN_8
 #define BEEP_GPIO_Port	   GPIOB
+
+#define NRF_IRQ_Pin		   GPIO_PIN_6
+#define NRF_IRQ_GPIO_Port  GPIOG
+#define NRF_CS_Pin		   GPIO_PIN_7
+#define NRF_CS_GPIO_Port   GPIOG
+#define NRF_CE_Pin		   GPIO_PIN_8
+#define NRF_CE_GPIO_Port   GPIOG
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
@@ -88,6 +96,12 @@ void Error_Handler(void);
 #define KEY_UP_GPIO_Port GPIOA
 #define FLASH_CS_Pin GPIO_PIN_12
 #define FLASH_CS_GPIO_Port GPIOB
+#define NRF_IRQ_Pin GPIO_PIN_6
+#define NRF_IRQ_GPIO_Port GPIOG
+#define NRF_CS_Pin GPIO_PIN_7
+#define NRF_CS_GPIO_Port GPIOG
+#define NRF_CE_Pin GPIO_PIN_8
+#define NRF_CE_GPIO_Port GPIOG
 #define LED0_DS0_Pin GPIO_PIN_5
 #define LED0_DS0_GPIO_Port GPIOB
 #define BEEP_Pin GPIO_PIN_8

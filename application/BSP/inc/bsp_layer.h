@@ -13,7 +13,7 @@
 
 #include "bsp_24cxx.h"
 #include "bsp_w25qxx.h"
-// #include "bsp_time.h"
+#include "bsp_spi.h"
 // #include "bsp_uart.h"
 
 void nvic_init(void);

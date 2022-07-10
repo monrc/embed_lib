@@ -14,9 +14,11 @@ typedef struct
 	TaskHandle_t task;
 } EepromMessage_t;
 
+void create_eeprom_task(void);
+
 void eeprom_task(void *parameter);
 
-void eeprom_irq_handle(TaskHandle_t task);
+void eeprom_irq_handle(void);
 
 void eeprom_write(uint8_t addr, uint8_t *data, uint16_t size, uint32_t waitTime);
 

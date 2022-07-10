@@ -5,27 +5,41 @@
 #include "bsp_spi.h"
 #include "bsp_w25qxx.h"
 
-QueueHandle_t sSpiQueue = NULL;
+#define SPI_CS_DISABLE	0
+#define SPI_CS_ENABLE	1
+
+
+#define enable_flash_cs()  HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_RESET)
+#define disable_flash_cs() HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_SET)
+#define enable_nrf_cs()	   HAL_GPIO_WritePin(NRF_CS_GPIO_Port, NRF_CS_Pin, GPIO_PIN_RESET)
+#define disable_nrf_cs()   HAL_GPIO_WritePin(NRF_CS_GPIO_Port, NRF_CS_Pin, GPIO_PIN_SET)
+
+static void set_spi_cs(uint8_t dev, uint8_t state);
+
+QueueHandle_t gSpiQueue = NULL;
 QueueHandle_t sSpiMutex = NULL;
-uint16_t sWaitTime = 10;
-
-#define enable_flash_cs()	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_RESET)
-#define disable_flash_cs()	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_SET)
-#define enable_flash_cs()	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_RESET)
-#define disable_flash_cs()	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_SET)
+TaskHandle_t sSpiTask = NULL;
 
 
-	uint16_t size, i;
-	uint8_t addr;
-	uint8_t pageRemain;
-	uint32_t notifyValue;
-	uint8_t *buff;
-
-
-void spi_write_flash(uint8_t *txBuff, uint8_t *rxBuff, uint8_t txSize, uint8_t rxSize)
+/*
+ * ============================================================================
+ * Function	: SPI操作FLASH芯片
+ * Input	: uint8_t *txBuff 发送的数据
+			  uint8_t txSize 发送数据长度
+			  uint8_t rxSize 接收数据长度
+ * Output	: uint8_t *rxBuff 接收的数据
+ * Return	: None
+ * ============================================================================
+ */
+void spi_write_read_flash(uint8_t *txBuff, uint8_t *rxBuff, uint8_t txSize, uint8_t rxSize)
 {
+	if (0 == txSize)
+	{
+		return;
+	}
+
 	xSemaphoreTake(sSpiMutex, portMAX_DELAY);
-	
+
 	enable_flash_cs();
 	HAL_SPI_Transmit(&hspi2, txBuff, txSize, 100);
 	if (rxSize)
@@ -36,96 +50,141 @@ void spi_write_flash(uint8_t *txBuff, uint8_t *rxBuff, uint8_t txSize, uint8_t r
 	xSemaphoreGive(sSpiMutex);
 }
 
-
-void spi_write_nrf24(uint8_t *txBuff, uint8_t *rxBuff, uint8_t txSize, uint8_t rxSize)
+/*
+ * ============================================================================
+ * Function	: SPI操作NRF24接口
+ * Input	: uint8_t *txBuff 发送的数据
+			  uint8_t txSize 发送数据长度
+			  uint8_t rxSize 接收数据长度
+ * Output	: uint8_t *rxBuff 接收的数据
+ * Return	: None
+ * ============================================================================
+ */
+void spi_write_read_nrf24(uint8_t *txBuff, uint8_t *rxBuff, uint8_t txSize, uint8_t rxSize)
 {
+	xSemaphoreTake(sSpiMutex, portMAX_DELAY);
 
+	enable_nrf_cs();
+	HAL_SPI_Transmit(&hspi2, txBuff, txSize, 100);
+	if (rxSize)
+	{
+		HAL_SPI_Receive(&hspi2, rxBuff, rxSize, 100);
+	}
+	disable_nrf_cs();
+	xSemaphoreGive(sSpiMutex);
 }
 
 
-
-
-void spi2_task(void)
+/*
+ * ============================================================================
+ * Function	: SPI初始化函数，创建SPI任务
+ * Input	: None
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void create_spi_task(void)
 {
-	SpiMessage_t message;
-	sSpiQueue = xQueueCreate(3, sizeof(SpiMessage_t));
+	gSpiQueue = xQueueCreate(3, sizeof(SpiMessage_t));
 	sSpiMutex = xSemaphoreCreateMutex();
+
+	xTaskCreate(spi_task, "spi", 512, NULL, 16, &sSpiTask);
+}
+
+/*
+ * ============================================================================
+ * Function	: SPI任务函数
+ * Input	: void *parameter 参数指针
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void spi_task(void *parameter)
+{
+	uint32_t notifyValue = 0;
+	SpiMessage_t message;
 
 	while (1)
 	{
-		xQueueReceive(sSpiQueue, &message, portMAX_DELAY);
+		xQueueReceive(gSpiQueue, &message, portMAX_DELAY);
 
-		if (message.type == SPI_FLASH)
+		xSemaphoreTake(sSpiMutex, portMAX_DELAY);
+		set_spi_cs(message.type, SPI_CS_ENABLE);
+
+		HAL_SPI_Transmit_DMA(&hspi2, message.txBuff, message.txSize);
+		if (xTaskNotifyWait(0, ULONG_MAX, &notifyValue, message.txSize))
 		{
-			
-		}
-		else if (message.type == SPI_NRF24)
-		{
-
-		}
-
-		if (message.type == FLASH_WRITE) //写数据
-		{
-			addr = message.addr;
-			buff = message.buff;
-
-			for (i = 0; i < message.size; i += size)
+			if (message.rxSize > 0)
 			{
-				size = message.size - i; //本次需要写入的个数
-				if (size > 8)
+				HAL_SPI_Receive_DMA(&hspi2, message.rxBuff, message.rxSize);
+				
+				if (xTaskNotifyWait(0, ULONG_MAX, &notifyValue, message.txSize))
 				{
-					size = 8;
+					xTaskNotify(message.task, SPI2_RX_NOTIFY_BIT, eSetBits); //通知任务完成数据读取
 				}
-
-				pageRemain = 8 - addr % 8; //依据写入地址获取剩余的可以写入的个数
-				if (pageRemain < 8 && pageRemain < size)
-				{
-					size = pageRemain;
-				}
-
-				// if (HAL_I2C_Mem_Write_DMA(&hi2c1, AT24C02_Write, addr, I2C_MEMADD_SIZE_8BIT, buff, size) != HAL_OK)
-				// {
-				// 	debug_error("eeprom write fail\r\n");
-				// }
-
-				addr += size;
-				buff += size;
-				vTaskDelay(5);
 			}
-
-			vPortFree(message.buff);
-		}
-		else if (message.type == FLASH_READ) //读数据
-		{
-			// if (HAL_I2C_Mem_Read_DMA(&hi2c1, AT24C02_Read, message.addr, I2C_MEMADD_SIZE_8BIT, message.buff,
-			// 						 message.size) != HAL_OK)
-			// {
-			// 	debug_error("eeprom read fail\r\n");
-			// }
-
-			if (xTaskNotifyWait(0, ULONG_MAX, &notifyValue, 5))
+			else if (message.freeRam)	// FLASH写入数据，发送任务不需要等待发送完成，且发送缓冲区动态申请，需要释放
 			{
-				xTaskNotify(message.task, READ_NOTIFIY_BIT, eSetBits); //通知任务完成数据读取
+				vPortFree(message.txBuff);
 			}
 		}
+		
+		set_spi_cs(message.type, SPI_CS_DISABLE);
+		xSemaphoreGive(sSpiMutex);
 	}
 }
 
-void spi_write_read(W25QXX_t *info)
+
+/*
+ * ============================================================================
+ * Function	: SPI DMA中断处理，发送、接收完成中断处理
+ * Input	: uint32_t type 中断类型
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+void spi2_irq_handle(uint32_t type)
 {
-	if (info->txSize)
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+	if (sSpiTask != NULL)
 	{
-		enable_spi_cs();
-
-		HAL_SPI_Transmit(&hspi2, info->txBuff, info->txSize, 100);
-		if (info->rxSize)
-		{
-			HAL_SPI_Receive(&hspi2, info->rxBuff, info->rxSize, 100);
-		}
-
-		disable_spi_cs();
+		xTaskNotifyFromISR(sSpiTask, type, eSetValueWithOverwrite, &xHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(xHigherPriorityTaskWoken); //如果需要的话进行一次任务切换
 	}
 }
 
-
-void 
+/*
+ * ============================================================================
+ * Function	: 设置SPI CS 管脚状态
+ * Input	: uint8_t dev 设备
+			  uint8_t state 状态  SPI_CS_DISABLE SPI_CS_ENABLE
+ * Output	: None
+ * Return	: None
+ * ============================================================================
+ */
+static void set_spi_cs(uint8_t dev, uint8_t state)
+{
+	if (dev == SPI_FLASH)
+	{
+		if (state == SPI_CS_DISABLE)
+		{
+			disable_flash_cs();
+		}
+		else
+		{
+			enable_flash_cs();
+		}
+	}
+	else if (dev == SPI_NRF24)
+	{
+		if (state == SPI_CS_DISABLE)
+		{
+			disable_nrf_cs();
+		}
+		else
+		{
+			enable_nrf_cs();
+		}
+	}
+}
