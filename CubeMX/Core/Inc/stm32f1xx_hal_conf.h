@@ -233,6 +233,7 @@
   * @brief Include module's header file
   */
 
+
 #ifdef HAL_RCC_MODULE_ENABLED
 #include "stm32f1xx_hal_rcc.h"
 #endif /* HAL_RCC_MODULE_ENABLED */

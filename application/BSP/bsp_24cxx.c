@@ -12,49 +12,6 @@
 QueueHandle_t sEepromQueue = NULL;
 TaskHandle_t sEepromTaskHandle = NULL;
 
-#if 0
-void bsp_24cxx_init(void)
-{
-	/*##-2- Start the transmission process #####################################*/
-	/* While the I2C in reception process, user can transmit data through
-	   "aTxBuffer" buffer */
-	while (HAL_I2C_Master_Transmit_DMA(&hdma_i2c1_tx, (uint16_t)I2C_ADDRESS, (uint8_t *)aTxBuffer, TXBUFFERSIZE) != HAL_OK)
-	{
-		/* Error_Handler() function is called when Timeout error occurs.
-		   When Acknowledge failure occurs (Slave don't acknowledge its address)
-		   Master restarts communication */
-		if (HAL_I2C_GetError(&hdma_i2c1_tx) != HAL_I2C_ERROR_AF)
-		{
-			Error_Handler();
-		}
-	}
-
-	/*##-3- Wait for the end of the transfer ###################################*/
-	/*  Before starting a new communication transfer, you need to check the current
-		state of the peripheral; if it¡¯s busy you need to wait for the end of current
-		transfer before starting a new one.
-		For simplicity reasons, this example is just waiting till the end of the
-		transfer, but application may perform other tasks while transfer operation
-		is ongoing. */
-	while (HAL_I2C_GetState(&hdma_i2c1_tx) != HAL_I2C_STATE_READY)
-	{
-	}
-
-
-	/*##-4- Put I2C peripheral in reception process ###########################*/
-	while (HAL_I2C_Master_Receive_DMA(&hdma_i2c1_tx, (uint16_t)I2C_ADDRESS, (uint8_t *)aRxBuffer, RXBUFFERSIZE) != HAL_OK)
-	{
-		/* Error_Handler() function is called when Timeout error occurs.
-		   When Acknowledge failure occurs (Slave don't acknowledge its address)
-		   Master restarts communication */
-		if (HAL_I2C_GetError(&hdma_i2c1_tx) != HAL_I2C_ERROR_AF)
-		{
-			Error_Handler();
-		}
-	}
-}
-#endif
-
 void at_24cxx_write(void)
 {
 	uint8_t i;
@@ -69,12 +26,6 @@ void at_24cxx_write(void)
 	}
 
 	eeprom_write(0, writeBuff, 256, 20);
-
-
-	// if (HAL_I2C_Mem_Write(&hi2c1, AT24C02_Write, 0, I2C_MEMADD_SIZE_8BIT, writeBuff, 8, 1000) == HAL_OK)
-	// {
-	// 	debug("24cxx write ok\r\n");
-	// }
 }
 
 
@@ -251,7 +202,7 @@ uint8_t eeprom_read(uint8_t addr, uint8_t *data, uint16_t size, uint32_t waitTim
 		}
 		else
 		{
-			return false; 
+			return false;
 		}
 	}
 	else

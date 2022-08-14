@@ -25,7 +25,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
+#include "stm32f103xe.h"
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_hal_conf.h"
 

@@ -6,8 +6,8 @@
 # Generic Makefile (based on gcc)
 #
 # ChangeLog :
+#	2015-07-22 - first version
 #	2017-02-10 - Several enhancements + project update mode
-#   2015-07-22 - first version
 # ------------------------------------------------
 
 ##############################################################################
@@ -26,7 +26,7 @@ DEBUG = 1
 OPT = -Og
 
 # 编译选项
-CFLAGS_OPT =
+CFLAGS_OPT = 
 
 # printf 重定向
 # CFLAGS_OPT += -fno-builtin
@@ -79,7 +79,9 @@ C_SOURCES_PATH = application/APP \
 				 application/BSP \
 				 application/FreeRTOS \
 				 application/FreeRTOS/portable \
-				 application/Lib
+				 application/Lib \
+				 application/FatFs/core \
+				 application/FatFs/sdio
 
 #添加 C_SOURCES_PATH 目录下所有c文件列表
 C_SOURCES += $(foreach dir,$(C_SOURCES_PATH),$(wildcard $(dir)/*.c))
@@ -150,7 +152,8 @@ C_INCLUDES =  \
 -I application/BSP/inc \
 -I application/FreeRTOS/include \
 -I application/FreeRTOS/portable \
--I application/Lib/inc 
+-I application/Lib/inc \
+-I application/FatFs/core/inc
 
 
 # compile gcc flags
@@ -219,6 +222,8 @@ $(BUILD_DIR):
 		mkdir -p $$x; \
 	done
 
+
+
 ##############################################################################
 # clean up
 ##############################################################################
@@ -229,6 +234,12 @@ clean:
 	find $(MDK_COMPEILE) -name *.d | xargs rm -f
 	find $(MDK_COMPEILE) -name *.o | xargs rm -f
 	find $(MDK_COMPEILE) -name *.crf | xargs rm -f
+
+##############################################################################
+# make file debug
+##############################################################################
+debug:
+	echo $(C_SOURCES)
 
 ##############################################################################
 # header file dependencies

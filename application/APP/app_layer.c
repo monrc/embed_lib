@@ -13,7 +13,6 @@
 *                             函数声明
 *************************************************************************
 */
-static void Led_Task(void *pvParameters); 		/* LED_Task任务实现 */
 static void Test_Task(void *parameter);
 static void Test1_Task(void *parameter);
 static void led_timer_callback(xTimerHandle timer);

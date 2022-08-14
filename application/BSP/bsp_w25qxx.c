@@ -423,7 +423,7 @@ void test1(void)
 	w25qxx_single_cmd(WRITE_ENABLE);
 	
 	w25qxx_erase(SECTOR_ERASE, 0);
-	program_pag(0, uid, 8, 1000);
+	program_page(0, uid, 8, 1000);
 
 	fast_read(0, uid, 8, 1000);
 	print_array(LOG_PRINT, "data", uid, 8);

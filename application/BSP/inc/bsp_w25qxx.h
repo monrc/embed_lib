@@ -147,7 +147,7 @@ typedef struct
 } W25QXX_t;
 
 
-#define program_pag(addr, buff, size, waitTime)			w25qxx_page_program(PAGE_PROGRAM, addr, buff, size, waitTime)
+#define program_page(addr, buff, size, waitTime)		w25qxx_page_program(PAGE_PROGRAM, addr, buff, size, waitTime)
 #define program_security(addr, buff, size, waitTime)	w25qxx_page_program(PROGRAM_SECURITY_REG, addr, buff, size, waitTime)
 
 #define read_data(addr, buff, size, waitTime)			w25qxx_read_data(READ_DATA, addr, buff, size, waitTime)
